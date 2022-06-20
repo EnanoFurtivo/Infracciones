@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class Form1 : Form
+    public partial class Infraccion : Form
     {
-        public Form1()
+        public Infraccion()
         {
             InitializeComponent();
         }
