@@ -34,11 +34,13 @@
             // 
             // checkedListBoxInfraccion
             // 
+            this.checkedListBoxInfraccion.BackColor = System.Drawing.Color.MintCream;
             this.checkedListBoxInfraccion.FormattingEnabled = true;
             this.checkedListBoxInfraccion.Location = new System.Drawing.Point(86, 53);
             this.checkedListBoxInfraccion.Name = "checkedListBoxInfraccion";
             this.checkedListBoxInfraccion.Size = new System.Drawing.Size(230, 334);
             this.checkedListBoxInfraccion.TabIndex = 1;
+            this.checkedListBoxInfraccion.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxInfraccion_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -55,8 +57,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(386, 454);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.ClientSize = new System.Drawing.Size(402, 493);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBoxInfraccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

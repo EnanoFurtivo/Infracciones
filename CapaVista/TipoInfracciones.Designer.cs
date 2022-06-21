@@ -1,6 +1,6 @@
 ﻿namespace CapaVista
 {
-    partial class Infraccion
+    partial class TipoInfracciones
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@
             // 
             // listBoxTipoInfraccion
             // 
+            this.listBoxTipoInfraccion.BackColor = System.Drawing.Color.MintCream;
             this.listBoxTipoInfraccion.FormattingEnabled = true;
             this.listBoxTipoInfraccion.Location = new System.Drawing.Point(86, 53);
             this.listBoxTipoInfraccion.Name = "listBoxTipoInfraccion";
@@ -44,21 +45,31 @@
             // 
             // buttonAgregarTipoInfraccion
             // 
+            this.buttonAgregarTipoInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.buttonAgregarTipoInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAgregarTipoInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAgregarTipoInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonAgregarTipoInfraccion.Location = new System.Drawing.Point(86, 419);
             this.buttonAgregarTipoInfraccion.Name = "buttonAgregarTipoInfraccion";
-            this.buttonAgregarTipoInfraccion.Size = new System.Drawing.Size(112, 30);
+            this.buttonAgregarTipoInfraccion.Size = new System.Drawing.Size(112, 43);
             this.buttonAgregarTipoInfraccion.TabIndex = 1;
-            this.buttonAgregarTipoInfraccion.Text = "Agregar Infraccion";
-            this.buttonAgregarTipoInfraccion.UseVisualStyleBackColor = true;
+            this.buttonAgregarTipoInfraccion.Text = "Agregar Tipo de Infraccion";
+            this.buttonAgregarTipoInfraccion.UseVisualStyleBackColor = false;
+            this.buttonAgregarTipoInfraccion.Click += new System.EventHandler(this.buttonAgregarTipoInfraccion_Click);
             // 
             // buttonModificarTipoInfraccion
             // 
+            this.buttonModificarTipoInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.buttonModificarTipoInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonModificarTipoInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonModificarTipoInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonModificarTipoInfraccion.Location = new System.Drawing.Point(204, 420);
             this.buttonModificarTipoInfraccion.Name = "buttonModificarTipoInfraccion";
-            this.buttonModificarTipoInfraccion.Size = new System.Drawing.Size(112, 29);
+            this.buttonModificarTipoInfraccion.Size = new System.Drawing.Size(112, 42);
             this.buttonModificarTipoInfraccion.TabIndex = 2;
-            this.buttonModificarTipoInfraccion.Text = "Modificar Infraccion";
-            this.buttonModificarTipoInfraccion.UseVisualStyleBackColor = true;
+            this.buttonModificarTipoInfraccion.Text = "Modificar Tipo de Infraccion";
+            this.buttonModificarTipoInfraccion.UseVisualStyleBackColor = false;
+            this.buttonModificarTipoInfraccion.Click += new System.EventHandler(this.buttonModificarTipoInfraccion_Click);
             // 
             // label1
             // 
@@ -67,22 +78,22 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(82, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Infracciones";
+            this.label1.Text = "Tipo de Infracciones";
             // 
-            // Infraccion
+            // TipoInfracciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
             this.ClientSize = new System.Drawing.Size(402, 493);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonModificarTipoInfraccion);
             this.Controls.Add(this.buttonAgregarTipoInfraccion);
             this.Controls.Add(this.listBoxTipoInfraccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Infraccion";
+            this.Name = "TipoInfracciones";
             this.Text = "Infraccion";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -70,11 +70,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infraccion.cs">
+    <Compile Include="AgregarTipoInfraccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Infraccion.Designer.cs">
-      <DependentUpon>Infraccion.cs</DependentUpon>
+    <Compile Include="AgregarTipoInfraccion.Designer.cs">
+      <DependentUpon>AgregarTipoInfraccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarInfraccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarInfraccion.Designer.cs">
+      <DependentUpon>EliminarInfraccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarTipoInfraccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarTipoInfraccion.Designer.cs">
+      <DependentUpon>ModificarTipoInfraccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoInfracciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoInfracciones.Designer.cs">
+      <DependentUpon>TipoInfracciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -102,8 +120,17 @@
     <Compile Include="RegistroInfraccion.Designer.cs">
       <DependentUpon>RegistroInfraccion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Infraccion.resx">
-      <DependentUpon>Infraccion.cs</DependentUpon>
+    <EmbeddedResource Include="AgregarTipoInfraccion.resx">
+      <DependentUpon>AgregarTipoInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarInfraccion.resx">
+      <DependentUpon>EliminarInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarTipoInfraccion.resx">
+      <DependentUpon>ModificarTipoInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoInfracciones.resx">
+      <DependentUpon>TipoInfracciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

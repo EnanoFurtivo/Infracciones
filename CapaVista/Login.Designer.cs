@@ -67,7 +67,7 @@ namespace CapaVista
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(153, 214);
             this.label2.Name = "label2";
@@ -87,9 +87,12 @@ namespace CapaVista
             // 
             // buttonAcceder
             // 
+            this.buttonAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAcceder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonAcceder.Location = new System.Drawing.Point(156, 370);
             this.buttonAcceder.Name = "buttonAcceder";
-            this.buttonAcceder.Size = new System.Drawing.Size(187, 23);
+            this.buttonAcceder.Size = new System.Drawing.Size(187, 40);
             this.buttonAcceder.TabIndex = 5;
             this.buttonAcceder.Text = "Acceder";
             this.buttonAcceder.UseVisualStyleBackColor = true;
@@ -108,7 +111,7 @@ namespace CapaVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.buttonAcceder);

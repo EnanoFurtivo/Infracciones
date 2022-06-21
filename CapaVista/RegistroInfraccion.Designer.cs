@@ -85,9 +85,12 @@
             // 
             // buttonRegistrarInfraccion
             // 
+            this.buttonRegistrarInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegistrarInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRegistrarInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonRegistrarInfraccion.Location = new System.Drawing.Point(129, 309);
             this.buttonRegistrarInfraccion.Name = "buttonRegistrarInfraccion";
-            this.buttonRegistrarInfraccion.Size = new System.Drawing.Size(144, 23);
+            this.buttonRegistrarInfraccion.Size = new System.Drawing.Size(144, 28);
             this.buttonRegistrarInfraccion.TabIndex = 5;
             this.buttonRegistrarInfraccion.Text = "Registrar";
             this.buttonRegistrarInfraccion.UseVisualStyleBackColor = true;
@@ -96,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
             this.ClientSize = new System.Drawing.Size(402, 493);
             this.Controls.Add(this.buttonRegistrarInfraccion);
             this.Controls.Add(this.label2);

@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaVista
 {
     public partial class Inicio : Form
     {
-        public Inicio()
+        Controller Controller;
+        public Inicio(Controller ctr, Administrador adm)
         {
             InitializeComponent();
+            Controller = ctr;
+            Administrador Admin = adm;
+            this.labelBienvenida.Text = "Bienvenido/a de nuevo, " + Admin.Nombre();
         }
 
         private void AbrirForm(object form)
@@ -32,7 +37,7 @@ namespace CapaVista
 
         private void buttonFormInfraccion_Click(object sender, EventArgs e)
         {
-            AbrirForm(new Infraccion());
+            AbrirForm(new TipoInfracciones(Controller));
         }
 
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -43,12 +48,27 @@ namespace CapaVista
 
         private void buttonFormRegistroInfraccion_Click(object sender, EventArgs e)
         {
-            AbrirForm(new RegistroInfraccion());
+            this.buttonEliminarInfraccion.Visible = true;
+            this.buttonRegistrarInfraccion.Visible = true;
         }
 
         private void buttonFormRegistrarPago_Click(object sender, EventArgs e)
         {
-            AbrirForm(new RegistrarPago());
+            AbrirForm(new RegistrarPago(Controller));
+        }
+
+        private void buttonRegistrarInfraccion_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new RegistroInfraccion());
+            this.buttonEliminarInfraccion.Visible = false;
+            this.buttonRegistrarInfraccion.Visible = false;
+        }
+
+        private void buttonEliminarInfraccion_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new EliminarInfraccion(Controller));
+            this.buttonEliminarInfraccion.Visible = false;
+            this.buttonRegistrarInfraccion.Visible = false;
         }
     }
 }

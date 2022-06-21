@@ -11,35 +11,31 @@ using CapaNegocio;
 
 namespace CapaVista
 {
-    public partial class RegistrarPago : Form
+    public partial class EliminarInfraccion : Form
     {
         Controller Controller;
-        public RegistrarPago(Controller ctr)
+        public EliminarInfraccion(Controller ctr)
         {
             InitializeComponent();
             Controller = ctr;
             RefrescarLista();
         }
-
         private List<Infraccion> RefrescarLista()
         {
             List<Infraccion> lista = Controller.Usuarios.Vehiculos.Infracciones);
 
-            checkedListBoxInfraccion.Items.Clear();
+            listBoxInfraccion.Items.Clear();
 
             for (int i = 0; i < lista.Count; i++)
-            {
-                if(lista[i].FechaPago == null)
-                    checkedListBoxInfraccion.Items.Add(lista.ToString());
-            }
+                listBoxInfraccion.Items.Add(lista.ToString());
 
             return lista;
         }
 
-        private void checkedListBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Infraccion item = (Infraccion)checkedListBoxInfraccion.GetItemChecked;
-            item.SetFechaPago(DateTime.Now);
+            Infraccion infraccion = (Infraccion)listBoxInfraccion.SelectedItem;
+            Controller.EliminarInfraccion(infraccion);
             RefrescarLista();
         }
     }
