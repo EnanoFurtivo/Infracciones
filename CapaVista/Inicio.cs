@@ -34,5 +34,21 @@ namespace CapaVista
         {
             AbrirForm(new Infraccion());
         }
+
+        private void buttonCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login frm = new Login();
+            frm.ShowDialog();
+        }
+
+        private void buttonFormRegistroInfraccion_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new RegistroInfraccion());
+        }
+
+        private void buttonFormRegistrarPago_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new RegistrarPago());
+        }
     }
 }

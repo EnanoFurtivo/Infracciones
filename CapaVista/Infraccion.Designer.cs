@@ -37,14 +37,14 @@
             // listBoxTipoInfraccion
             // 
             this.listBoxTipoInfraccion.FormattingEnabled = true;
-            this.listBoxTipoInfraccion.Location = new System.Drawing.Point(84, 53);
+            this.listBoxTipoInfraccion.Location = new System.Drawing.Point(86, 53);
             this.listBoxTipoInfraccion.Name = "listBoxTipoInfraccion";
             this.listBoxTipoInfraccion.Size = new System.Drawing.Size(230, 342);
             this.listBoxTipoInfraccion.TabIndex = 0;
             // 
             // buttonAgregarTipoInfraccion
             // 
-            this.buttonAgregarTipoInfraccion.Location = new System.Drawing.Point(84, 420);
+            this.buttonAgregarTipoInfraccion.Location = new System.Drawing.Point(86, 419);
             this.buttonAgregarTipoInfraccion.Name = "buttonAgregarTipoInfraccion";
             this.buttonAgregarTipoInfraccion.Size = new System.Drawing.Size(112, 30);
             this.buttonAgregarTipoInfraccion.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // buttonModificarTipoInfraccion
             // 
-            this.buttonModificarTipoInfraccion.Location = new System.Drawing.Point(202, 420);
+            this.buttonModificarTipoInfraccion.Location = new System.Drawing.Point(204, 420);
             this.buttonModificarTipoInfraccion.Name = "buttonModificarTipoInfraccion";
             this.buttonModificarTipoInfraccion.Size = new System.Drawing.Size(112, 29);
             this.buttonModificarTipoInfraccion.TabIndex = 2;
@@ -63,11 +63,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(80, 26);
+            this.label1.Location = new System.Drawing.Point(82, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 24);
+            this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Infracciones";
             // 
