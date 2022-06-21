@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    class Administrador : Usuario
+    public class Administrador : Usuario
     {
         public Administrador(int dni, string clave, string nombre) : base(dni, clave, nombre) 
         {

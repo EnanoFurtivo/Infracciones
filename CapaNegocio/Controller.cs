@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    class Controller
+    public class Controller
     {
         public List<TipoInfraccion> TiposInfraccion;
         public List<Usuario> Usuarios;

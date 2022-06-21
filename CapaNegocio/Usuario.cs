@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    class Usuario
+    public class Usuario
     {
         public int Dni { get; internal set; }
         public string Clave { get; internal set; }

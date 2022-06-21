@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    class Infraccion
+    public class Infraccion
     {
         public static int UltimaInfraccion { get; set; }
 
