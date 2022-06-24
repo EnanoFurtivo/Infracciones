@@ -22,7 +22,7 @@ namespace CapaNegocio
             Duenio.RegistrarVehiculo(this);
         }
 
-        public void Modificar(string dominio = null, Duenio duenio = null, string marca = null)
+        public void Modificar(string dominio, Duenio duenio, string marca)
         {
             Dominio = dominio ?? Dominio;
             Marca = marca ?? Marca;
