@@ -22,16 +22,19 @@ namespace CapaVista
         }
         private List<Infraccion> RefrescarLista()
         {
-            List<Infraccion> lista = Controller.Usuarios.Vehiculos.Infracciones);
+            //Carga las listas para las infracciones
+            List<Usuario> usuarios = Controller.Usuarios;
+            List<Infraccion> lista = new List<Infraccion>();
 
-            listBoxInfraccion.Items.Clear();
+            for (int i = 0; i < usuarios.Count; i++)
+                for (int j = 0; j < usuarios[i].MostrarLista().Count; j++)
+                    lista.Add(usuarios[i].MostrarLista()[j]);
 
             for (int i = 0; i < lista.Count; i++)
                 listBoxInfraccion.Items.Add(lista.ToString());
 
             return lista;
         }
-
         private void listBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
         {
             Infraccion infraccion = (Infraccion)listBoxInfraccion.SelectedItem;

@@ -68,9 +68,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(105, 223);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 15);
+            this.label1.Size = new System.Drawing.Size(187, 15);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Seleccione fecha de infraccion";
+            this.label1.Text = "Seleccione fecha de vencimiento";
             // 
             // label2
             // 
@@ -94,6 +94,7 @@
             this.buttonRegistrarInfraccion.TabIndex = 5;
             this.buttonRegistrarInfraccion.Text = "Registrar";
             this.buttonRegistrarInfraccion.UseVisualStyleBackColor = true;
+            this.buttonRegistrarInfraccion.Click += new System.EventHandler(this.buttonRegistrarInfraccion_Click);
             // 
             // RegistroInfraccion
             // 

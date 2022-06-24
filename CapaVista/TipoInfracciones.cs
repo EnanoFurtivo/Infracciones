@@ -36,14 +36,14 @@ namespace CapaVista
         private void buttonAgregarTipoInfraccion_Click(object sender, EventArgs e)
         {
             AgregarTipoInfraccion form = new AgregarTipoInfraccion(Controller);
-            form.ShowDialog(Controller);
+            form.ShowDialog();
             RefrescarLista();
         }
 
         private void buttonModificarTipoInfraccion_Click(object sender, EventArgs e)
         {
             ModificarTipoInfraccion form = new ModificarTipoInfraccion(Controller, (TipoInfraccion)listBoxTipoInfraccion.SelectedItem);
-            form.ShowDialog(Controller);
+            form.ShowDialog();
             RefrescarLista();
         }
     }

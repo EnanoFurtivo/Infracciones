@@ -23,10 +23,18 @@ namespace CapaVista
 
         private List<Infraccion> RefrescarLista()
         {
-            List<Infraccion> lista = Controller.Usuarios.Vehiculos.Infracciones);
+            //Carga las listas para las infracciones
+            List<Usuario> usuarios = Controller.Usuarios;
+            List<Infraccion> lista = new List<Infraccion>();
+
+            for(int i = 0; i < usuarios.Count; i++)
+                for(int j = 0; j < usuarios[i].MostrarLista().Count; j++)
+                    lista.Add(usuarios[i].MostrarLista()[j]);
+
 
             checkedListBoxInfraccion.Items.Clear();
 
+            //Muestra las infracciones de los duenios que no estan pagas
             for (int i = 0; i < lista.Count; i++)
             {
                 if(lista[i].FechaPago == null)
@@ -38,8 +46,15 @@ namespace CapaVista
 
         private void checkedListBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Infraccion item = (Infraccion)checkedListBoxInfraccion.GetItemChecked;
-            item.SetFechaPago(DateTime.Now);
+            bool seleccionado = false;
+            seleccionado = checkedListBoxInfraccion.GetItemChecked(checkedListBoxInfraccion.SelectedIndex);
+
+            if (seleccionado)
+            {
+                Infraccion item = (Infraccion)checkedListBoxInfraccion.SelectedItem;
+                item.FechaPago = DateTime.Now;
+            }
+
             RefrescarLista();
         }
     }

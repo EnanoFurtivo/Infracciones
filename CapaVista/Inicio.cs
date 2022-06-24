@@ -19,7 +19,7 @@ namespace CapaVista
             InitializeComponent();
             Controller = ctr;
             Administrador Admin = adm;
-            this.labelBienvenida.Text = "Bienvenido/a de nuevo, " + Admin.Nombre();
+            this.labelBienvenida.Text = "Bienvenido/a de nuevo, " + Admin.Nombre.ToString();
         }
 
         private void AbrirForm(object form)
@@ -59,7 +59,7 @@ namespace CapaVista
 
         private void buttonRegistrarInfraccion_Click(object sender, EventArgs e)
         {
-            AbrirForm(new RegistroInfraccion());
+            AbrirForm(new RegistroInfraccion(Controller));
             this.buttonEliminarInfraccion.Visible = false;
             this.buttonRegistrarInfraccion.Visible = false;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,9 +23,9 @@ namespace CapaVista
             string grave = "Grave";
             string leve = "Leve";
 
-            textBoxCodigo.Text = tipoInf.Codigo;
+            textBoxCodigo.Text = tipoInf.Codigo.ToString();
             textBoxDescripcion.Text = tipoInf.Descripcion;
-            textBoxImporte.Text = tipoInf.Importe;
+            textBoxImporte.Text = tipoInf.Importe.ToString();
 
             comboBoxTipo.DataSource = null;
             comboBoxTipo.Items[0] = grave;
@@ -34,12 +35,11 @@ namespace CapaVista
 
         private void buttonModificarTipoInfraccion_Click(object sender, EventArgs e)
         {
-            int codigo = int.Parse(textBoxCodigo.Text);
             string descripcion = textBoxDescripcion.Text;
             double importe = double.Parse(textBoxImporte.Text);
-            string tipo = comboBoxTipo.SelectedItem.ToString();
+            char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
 
-            TipoInfraccion tipoInfraccion = new TipoInfraccion(codigo, descripcion, importe, tipo);
+            TipoInfraccion tipoInfraccion = new TipoInfraccion(descripcion, importe, tipo);
             Controller.ModificarTipoInfraccion(tipoInfraccion);
         }
     }

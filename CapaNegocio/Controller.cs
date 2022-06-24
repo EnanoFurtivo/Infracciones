@@ -17,10 +17,29 @@ namespace CapaNegocio
             Usuarios = new List<Usuario>();
         }
 
-        public void registrarTipoInfraccion()
+        public void RegistrarTipoInfraccion()
         {
-
+            throw new NotImplementedException();
         }
 
+        public void RegistrarInfraccion(Infraccion infraccion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegistrarTipoInfraccion(TipoInfraccion tipoInfraccion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EliminarInfraccion(Infraccion infraccion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ModificarTipoInfraccion(TipoInfraccion tipoInfraccion)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

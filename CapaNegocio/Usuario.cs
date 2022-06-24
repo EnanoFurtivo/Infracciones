@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class Usuario
+    public abstract class Usuario
     {
         public int Dni { get; internal set; }
         public string Clave { get; internal set; }
@@ -18,5 +18,6 @@ namespace CapaNegocio
             this.Clave = clave ?? throw new ArgumentNullException(nameof(clave));
             this.Nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
         }
+        public abstract List<Infraccion> MostrarLista();
     }
 }

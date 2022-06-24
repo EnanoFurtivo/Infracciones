@@ -13,7 +13,7 @@ namespace CapaNegocio
         public int NumeroInfraccion { get; internal set; }
         public DateTime FechaInfraccion { get; internal set; }
         public DateTime FechaVencimiento { get; internal set; }
-        public DateTime? FechaPago { get; internal set; }
+        public DateTime? FechaPago { get; set; }
         public TipoInfraccion TipoInfraccion { get; internal set; }
         public Vehiculo Vehiculo { get; internal set; }
         /// <summary>

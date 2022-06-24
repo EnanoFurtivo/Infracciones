@@ -29,12 +29,11 @@ namespace CapaVista
 
         private void buttonAgregarTipoInfraccion_Click(object sender, EventArgs e)
         {
-            int codigo = int.Parse(textBoxCodigo.Text);
             string descripcion = textBoxDescripcion.Text;
             double importe = double.Parse(textBoxImporte.Text);
-            string tipo = comboBoxTipo.SelectedItem.ToString();
+            char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
 
-            TipoInfraccion tipoInfraccion = new TipoInfraccion(codigo, descripcion, importe, tipo);
+            TipoInfraccion tipoInfraccion = new TipoInfraccion(descripcion, importe, tipo);
             Controller.RegistrarTipoInfraccion(tipoInfraccion);
         }
     }
