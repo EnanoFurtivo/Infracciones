@@ -14,11 +14,9 @@ namespace CapaVista
 {
     public partial class ModificarTipoInfraccion : Form
     {
-        Controller Controller;
-        public ModificarTipoInfraccion(Controller ctr, TipoInfraccion tipoInf)
+        public ModificarTipoInfraccion(TipoInfraccion tipoInf)
         {
             InitializeComponent();
-            Controller = ctr;
 
             string grave = "Grave";
             string leve = "Leve";
@@ -36,11 +34,49 @@ namespace CapaVista
         private void buttonModificarTipoInfraccion_Click(object sender, EventArgs e)
         {
             string descripcion = textBoxDescripcion.Text;
-            double importe = double.Parse(textBoxImporte.Text);
+            if (!ValidarDescripcion(descripcion))
+                return;
+
+            string importeStr = textBoxImporte.Text;
+            double importe;
+            if (!ValidarImporte(importeStr, out importe))
+                return;
+
             char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
 
-            TipoInfraccion tipoInfraccion = new TipoInfraccion(descripcion, importe, tipo);
-            Controller.ModificarTipoInfraccion(tipoInfraccion);
+            if(comboBoxTipo.SelectedItem != null)
+               TipoInfraccion.Actualizar(descripcion, importe, tipo);
+            
+            this.Close();
+        }
+        //Validar//
+        private bool ValidarDescripcion(string descripcion)
+        {
+            if (descripcion == "")
+            {
+                MessageBox.Show("Se esperaba una descripcion", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+        private bool ValidarImporte(string importeStr, out double importe)
+        {
+            if (importeStr == "")
+            {
+                MessageBox.Show("Se esperaba un costo", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                importe = -1;
+                return false;
+            }
+
+            if (!double.TryParse(importeStr, out importe))
+            {
+                MessageBox.Show("El costo debe ser numerico", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                importe = -1;
+                return false;
+            }
+
+            return true;
         }
     }
 }

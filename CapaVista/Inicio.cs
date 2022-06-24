@@ -13,11 +13,9 @@ namespace CapaVista
 {
     public partial class Inicio : Form
     {
-        Controller Controller;
-        public Inicio(Controller ctr, Administrador adm)
+        public Inicio(Administrador adm)
         {
             InitializeComponent();
-            Controller = ctr;
             Administrador Admin = adm;
             this.labelBienvenida.Text = "Bienvenido/a de nuevo, " + Admin.Nombre.ToString();
         }
@@ -37,7 +35,7 @@ namespace CapaVista
 
         private void buttonFormInfraccion_Click(object sender, EventArgs e)
         {
-            AbrirForm(new TipoInfracciones(Controller));
+            AbrirForm(new TipoInfracciones());
         }
 
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -54,21 +52,31 @@ namespace CapaVista
 
         private void buttonFormRegistrarPago_Click(object sender, EventArgs e)
         {
-            AbrirForm(new RegistrarPago(Controller));
+            AbrirForm(new RegistrarPago());
         }
 
         private void buttonRegistrarInfraccion_Click(object sender, EventArgs e)
         {
-            AbrirForm(new RegistroInfraccion(Controller));
+            AbrirForm(new RegistroInfraccion());
             this.buttonEliminarInfraccion.Visible = false;
             this.buttonRegistrarInfraccion.Visible = false;
         }
 
         private void buttonEliminarInfraccion_Click(object sender, EventArgs e)
         {
-            AbrirForm(new EliminarInfraccion(Controller));
+            AbrirForm(new EliminarInfraccion());
             this.buttonEliminarInfraccion.Visible = false;
             this.buttonRegistrarInfraccion.Visible = false;
+        }
+
+        private void buttonRegistrarUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new RegistrarUsuario());
+        }
+
+        private void buttonRegistrarVehiculo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new RegistrarVehiculo());
         }
     }
 }

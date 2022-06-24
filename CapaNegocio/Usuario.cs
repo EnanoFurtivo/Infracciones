@@ -68,9 +68,40 @@ namespace CapaNegocio
             this.Nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
         }
 
+        //Validar//
+        public static Usuario GetUsuario(int dni)
+        {
+            return Usuarios.Find(u => u.Dni == dni);
+        }
+        public bool ValidarClave(string clave)
+        {
+            return (this.Clave == clave);
+        }
+        public static bool ValidarCredenciales(int dni, string clave, Type filterType)
+        {
+            Usuario u = null;
+
+            if ((u = GetUsuario(dni)) == null)
+                return false;
+
+            if (!u.ValidarClave(clave))
+                return false;
+            
+            if(u.GetType() != filterType)
+                return false;
+
+            return true;
+        }
+
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
         public abstract bool Registrar();
         public abstract bool Actualizar();
         public abstract bool Eliminar();
+
+        //Conexion a base de datos//
+        public static void PonerPathABaseAccess(string l)
+        {
+            DatosBD.PonerPathBaseAccess(l);
+        }
     }
 }

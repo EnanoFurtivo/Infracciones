@@ -97,7 +97,7 @@ namespace CapaNegocio
         //Persistencia de datos//
         public bool Registrar()
         {
-            return DatosBD.Registrar();
+            throw new InvalidOperationException();
         }
         public bool Actualizar()
         {
@@ -105,7 +105,7 @@ namespace CapaNegocio
         }
         public bool Eliminar()
         {
-            return DatosBD.Eliminar();
+            throw new InvalidOperationException();
         }
     }
 }

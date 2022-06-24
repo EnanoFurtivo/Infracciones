@@ -88,6 +88,18 @@
     <Compile Include="ModificarTipoInfraccion.Designer.cs">
       <DependentUpon>ModificarTipoInfraccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarUsuario.Designer.cs">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarVehiculo.Designer.cs">
+      <DependentUpon>RegistrarVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoInfracciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarTipoInfraccion.resx">
       <DependentUpon>ModificarTipoInfraccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarUsuario.resx">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarVehiculo.resx">
+      <DependentUpon>RegistrarVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoInfracciones.resx">
       <DependentUpon>TipoInfracciones.cs</DependentUpon>
