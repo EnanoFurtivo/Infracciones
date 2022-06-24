@@ -16,7 +16,7 @@ namespace CapaNegocio
             List<TipoInfraccion> tiposInfraccion = new List<TipoInfraccion>();
 
             List<Dictionary<string, string>> datosTiposInfraccion = DatosBD.Recuperar(
-                "tiposInfraccion",                                      //FROM tiposInfraccion
+                "tipoInfraccion",                                       //FROM tiposInfraccion
                 new string[] {"codigo","descripcion","importe","tipo"}  //SELECT codigo, descripcion, importe, tipo
                 );
 
@@ -94,15 +94,15 @@ namespace CapaNegocio
             }
         }
 
-        public bool Registrar()
+        public void Registrar()
         {
             throw new NotImplementedException();
         }
-        public bool Actualizar()
+        public void Actualizar()
         {
             throw new NotImplementedException();
         }
-        public bool Eliminar()
+        public void Eliminar()
         {
             throw new NotImplementedException();
         }

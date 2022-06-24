@@ -35,6 +35,19 @@ namespace CapaNegocio
         /// </summary>
         public double MontoInfraccion { get { return GetMontoInfraccion(); } }
 
+        /// <summary>
+        /// Metodo utilizado para recuperar de la base de datos, NO IMPLEMENTAR!!
+        /// </summary>
+        public Infraccion(int nroInfraccion, DateTime fechaInfraccion, TipoInfraccion tipoInfraccion, Vehiculo vehiculo)
+        {
+            FechaInfraccion = fechaInfraccion;
+            FechaVencimiento = fechaInfraccion + new TimeSpan(CantidadDiasVencimiento, 0, 0, 0);
+            FechaPago = null;
+            TipoInfraccion = tipoInfraccion ?? throw new ArgumentNullException(nameof(tipoInfraccion));
+            Vehiculo = vehiculo ?? throw new ArgumentNullException(nameof(vehiculo));
+            ImporteBase = tipoInfraccion.Importe; //congelar el importe cuando se crea la infraccion
+            NumeroInfraccion = nroInfraccion;
+        }
         public Infraccion(DateTime fechaInfraccion, TipoInfraccion tipoInfraccion, Vehiculo vehiculo)
         {
             FechaInfraccion = fechaInfraccion;
@@ -60,15 +73,15 @@ namespace CapaNegocio
             return FechaPago != null;
         }
 
-        public bool Registrar()
+        public void Registrar()
         {
             return DatosBD.Registrar();
         }
-        public bool Actualizar()
+        public void Actualizar()
         {
             throw new InvalidOperationException();
         }
-        public bool Eliminar()
+        public void Eliminar()
         {
             return DatosBD.Eliminar();
         }

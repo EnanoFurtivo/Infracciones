@@ -32,18 +32,19 @@ namespace CapaNegocio
             List<Infraccion> infracciones = new List<Infraccion>();
 
             List<Dictionary<string, string>> datosInfracciones = DatosBD.Recuperar(
-                "infraccion",                                       //FROM infraccion
-                new string[]  {"fechaInfraccion","tipoInfraccion"}, //SELECT fechaInfraccion, tipoInfraccion
-                new string[,] {{"vehiculo",Dominio}}                //WHERE vehiculo = <Dominio>
+                "infraccion",                                                       //FROM infraccion
+                new string[]  {"numInfraccion","fechaInfraccion","tipoInfraccion"}, //SELECT numInfraccion, fechaInfraccion, tipoInfraccion
+                new string[,] {{"vehiculo",Dominio}}                                //WHERE vehiculo = <Dominio>                                 
                 );
 
             foreach (Dictionary<string, string> datosInfraccion in datosInfracciones)
             {
+                int numInfraccion = int.Parse(datosInfraccion["numInfraccion"]);
                 DateTime fechaInfraccion = DateTime.Parse(datosInfraccion["fechaInfraccion"]);
                 int nroTipoInfraccion = int.Parse(datosInfraccion["tipoInfraccion"]);
                 TipoInfraccion tipoInfraccion = TipoInfraccion.GetTipoInfraccion(nroTipoInfraccion);
 
-                Infraccion infraccion = new Infraccion(fechaInfraccion, tipoInfraccion, this);
+                Infraccion infraccion = new Infraccion(numInfraccion, fechaInfraccion, tipoInfraccion, this);
                 
                 infracciones.Add(infraccion);
             }
@@ -95,15 +96,18 @@ namespace CapaNegocio
         }
 
         //Persistencia de datos//
-        public bool Registrar()
+        public void Registrar()
         {
-            return DatosBD.Registrar();
+            DatosBD.Registrar(
+                "vehiculo",
+                new string[,] {{"dominio",Dominio},{"marca",Marca},{"duenio",Duenio.Dni.ToString()}}
+                );
         }
-        public bool Actualizar()
+        public void Actualizar()
         {
             throw new InvalidOperationException();
         }
-        public bool Eliminar()
+        public void Eliminar()
         {
             return DatosBD.Eliminar();
         }
