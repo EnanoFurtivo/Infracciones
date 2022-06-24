@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,25 @@ namespace CapaNegocio
     public class TipoInfraccion : IDatos
     {
         public static List<TipoInfraccion> TiposInfraccion;
-        public static bool RecuperarTiposInfraccion()
+        public static void RecuperarTiposInfraccion()
         {
-            throw new NotImplementedException();
+            List<TipoInfraccion> tiposInfraccion = new List<TipoInfraccion>();
+
+            List<Dictionary<string, string>> datosUsuarios = DatosBD.Recuperar(
+                "tiposInfraccion",                              //FROM tiposInfraccion
+                new string[] {"descripcion","importe","tipo"}   //SELECT descripcion, importe, tipo
+                );
+
+            foreach (Dictionary<string, string> datosUsuario in datosUsuarios)
+            {
+                string descripcion = datosUsuario["descripcion"];
+                double importe = double.Parse(datosUsuario["importe"]);
+                char tipo = char.Parse(datosUsuario["tipo"]);
+                tiposInfraccion.Add(new TipoInfraccion(descripcion, importe, tipo));
+            }
+
+            TiposInfraccion = tiposInfraccion;
+            UltimoTipoInfraccion = tiposInfraccion.Count - 1;
         }
         public static TipoInfraccion GetTipoInfraccion(int codigo)
         {

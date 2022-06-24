@@ -17,8 +17,8 @@ namespace CapaNegocio
             List<Usuario> usuarios = new List<Usuario>();
 
             List<Dictionary<string,string>> datosUsuarios = DatosBD.Recuperar(
-                "usuario", 
-                new string[] {"dni","clave","nombre","tipo"}
+                "usuario",                                      //FROM usuario
+                new string[] {"dni","clave","nombre","tipo"}    //SELECT dni, clave, nombre, tipo
                 );
 
             foreach (Dictionary<string,string> datosUsuario in datosUsuarios)

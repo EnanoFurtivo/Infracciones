@@ -14,11 +14,11 @@ namespace CapaNegocio
         public void RecuperarVehiculos()
         {
             List<Vehiculo> vehiculos = new List<Vehiculo>();
-
+            
             List<Dictionary<string, string>> datosVehiculos = DatosBD.Recuperar(
-                "vehiculo",                             //FROM vehiculo
-                new string[]  {"dominio","marca"},      //SELECT dominio, marca
-                new string[,] {{"dni",Dni.ToString()}}  //WHERE dni = Dni
+                "vehiculo",                                 //FROM vehiculo
+                new string[]  {"dominio","marca"},          //SELECT dominio, marca
+                new string[,] {{"duenio",Dni.ToString()}}   //WHERE duenio = Dni
                 );
 
             foreach (Dictionary<string, string> datosUsuario in datosVehiculos)
@@ -26,7 +26,7 @@ namespace CapaNegocio
                 string dominio = datosUsuario["dominio"];
                 string marca = datosUsuario["marca"];
 
-                Vehiculo vehiculo = new Vehiculo(dominio,this,marca);
+                Vehiculo vehiculo = new Vehiculo(dominio, this, marca);
                 vehiculo.RecuperarInfracciones();
 
                 vehiculos.Add(vehiculo);

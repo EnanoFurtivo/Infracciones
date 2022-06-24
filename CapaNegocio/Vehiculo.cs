@@ -32,8 +32,9 @@ namespace CapaNegocio
             List<Infraccion> infracciones = new List<Infraccion>();
 
             List<Dictionary<string, string>> datosInfracciones = DatosBD.Recuperar(
-                "vehiculo", 
-                new string[] { "fechaInfraccion", "tipoInfraccion" }
+                "infraccion",                                       //FROM infraccion
+                new string[]  {"fechaInfraccion","tipoInfraccion"}, //SELECT fechaInfraccion, tipoInfraccion
+                new string[,] {{"vehiculo",Dominio}}                //WHERE vehiculo = <Dominio>
                 );
 
             foreach (Dictionary<string, string> datosInfraccion in datosInfracciones)
@@ -49,7 +50,7 @@ namespace CapaNegocio
 
             Infracciones = infracciones;
         }
-
+        
         //Atributos del vehiculo//
         public string Dominio { get; internal set; }
         public Duenio Duenio { get; set; }

@@ -11,6 +11,14 @@ namespace CapaNegocio
     {
         private static int CantidadDiasVencimiento = 30;
         private static int UltimaInfraccion;
+        public static void RecuperarUltimaInfraccion()
+        {
+            List<Dictionary<string, string>> datosInfracciones = DatosBD.Recuperar(
+                "infraccion"    //SELECT * FROM infraccion
+                );
+
+            UltimaInfraccion = datosInfracciones.Count - 1;
+        }
 
         public int NumeroInfraccion { get; internal set; }
         public DateTime FechaInfraccion { get; internal set; }
