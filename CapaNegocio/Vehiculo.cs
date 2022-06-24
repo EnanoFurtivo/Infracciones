@@ -48,5 +48,32 @@ namespace CapaNegocio
 
             Infracciones.Remove(infraccion);
         }
+        public static List<Vehiculo> GetVehiculos()
+        {
+            List<Vehiculo> lista = new List<Vehiculo>();
+            List<Usuario> duenios = Usuario.GetUsuarios(typeof(Duenio));
+
+            for (int i = 0; i < duenios.Count; i++)
+            {
+                Duenio duenio = (Duenio)duenios[i];
+                for (int j = 0; j < duenio.Vehiculos.Count; j++)
+                {
+                    Vehiculo vehiculo = duenio.Vehiculos[j];
+                    lista.Add(vehiculo);
+                }
+            }
+
+            return lista;
+        }
+        public List<Infraccion> GetInfraccionesPendientes()
+        {
+            List<Infraccion> lista = new List<Infraccion>();
+
+            for (int i = 0; i < Infracciones.Count; i++)
+                if (!Infracciones[i].EstaPaga())
+                    lista.Add(Infracciones[i]);
+
+            return lista;
+        }
     }
 }

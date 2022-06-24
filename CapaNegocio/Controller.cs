@@ -9,7 +9,6 @@ namespace CapaNegocio
     public class Controller
     {
         public List<TipoInfraccion> TiposInfraccion;
-        public List<Usuario> Usuarios;
 
         public Controller()
         {

@@ -11,9 +11,5 @@ namespace CapaNegocio
         public Administrador(int dni, string clave, string nombre) : base(dni, clave, nombre) 
         {
         }
-        public override List<Infraccion> MostrarLista()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

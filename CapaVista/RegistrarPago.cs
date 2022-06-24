@@ -13,49 +13,42 @@ namespace CapaVista
 {
     public partial class RegistrarPago : Form
     {
-        Controller Controller;
-        public RegistrarPago(Controller ctr)
+        public RegistrarPago()
         {
             InitializeComponent();
-            Controller = ctr;
-            RefrescarLista();
+            List<Vehiculo> vehiculos = Vehiculo.GetVehiculos();
+
+            listBoxVehiculos.Items.Clear();
+            listBoxVehiculos.Items.Add(vehiculos.ToString());
         }
 
-        private List<Infraccion> RefrescarLista()
+        private void RefrescarListaInfracciones(Vehiculo vehiculo)
         {
-            //Carga las listas para las infracciones
-            List<Usuario> usuarios = Controller.Usuarios;
-            List<Infraccion> lista = new List<Infraccion>();
-
-            for(int i = 0; i < usuarios.Count; i++)
-                for(int j = 0; j < usuarios[i].MostrarLista().Count; j++)
-                    lista.Add(usuarios[i].MostrarLista()[j]);
-
+            List<Infraccion> infracciones = vehiculo.GetInfraccionesPendientes();
 
             checkedListBoxInfraccion.Items.Clear();
 
             //Muestra las infracciones de los duenios que no estan pagas
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0; i < infracciones.Count; i++)
             {
-                if(lista[i].FechaPago == null)
-                    checkedListBoxInfraccion.Items.Add(lista.ToString());
+                checkedListBoxInfraccion.Items.Add(infracciones[i].ToString());
             }
-
-            return lista;
+        }
+        private void listBoxVehiculos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Vehiculo vehiculo = (Vehiculo)listBoxVehiculos.SelectedItem;
+            RefrescarListaInfracciones(vehiculo);
         }
 
-        private void checkedListBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonRegistrarPagos_Click(object sender, EventArgs e)
         {
-            bool seleccionado = false;
-            seleccionado = checkedListBoxInfraccion.GetItemChecked(checkedListBoxInfraccion.SelectedIndex);
+            List<Infraccion> infracciones = new List<Infraccion>();
 
-            if (seleccionado)
-            {
-                Infraccion item = (Infraccion)checkedListBoxInfraccion.SelectedItem;
-                item.FechaPago = DateTime.Now;
-            }
+            for (int i = 0; i < checkedListBoxInfraccion.CheckedItems.Count; i++)
+                 infracciones.Add((Infraccion)checkedListBoxInfraccion.CheckedItems[i]);
 
-            RefrescarLista();
+            for(int i = 0; infracciones.Count > 0; i++)
+                infracciones[i].RegistrarPago(dateTimePickerFechaPago.Value);
         }
     }
 }

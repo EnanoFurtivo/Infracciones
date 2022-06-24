@@ -45,8 +45,8 @@ namespace CapaVista
 
             if(dateTime != null && tipoInfraccion != null && vehiculo != null)
             {
-                Infraccion infraccion = new Infraccion(dateTime, tipoInfraccion, vehiculo);
-                controller.RegistrarInfraccion(infraccion);
+               // Infraccion infraccion = new Infraccion(dateTime, tipoInfraccion, vehiculo);
+                vehiculo.RegistrarInfraccion(dateTime, tipoInfraccion);
             }
         }
     }
