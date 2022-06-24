@@ -41,15 +41,15 @@ namespace CapaNegocio
             Vehiculos = new List<Vehiculo>();
         }
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
-        public override bool Registrar()
+        public override void Registrar()
         {
             throw new NotImplementedException();
         }
-        public override bool Actualizar()
+        public override void Actualizar()
         {
             throw new NotImplementedException();
         }
-        public override bool Eliminar()
+        public override void Eliminar()
         {
             throw new NotImplementedException();
         }

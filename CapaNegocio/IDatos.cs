@@ -8,8 +8,8 @@ namespace CapaNegocio
 {
     public interface IDatos
     {
-        bool Registrar();
-        bool Actualizar();
-        bool Eliminar();
+        void Registrar();
+        void Actualizar();
+        void Eliminar();
     }
 }

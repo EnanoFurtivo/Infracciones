@@ -17,8 +17,8 @@ namespace CapaNegocio
             List<Usuario> usuarios = new List<Usuario>();
 
             List<Dictionary<string,string>> datosUsuarios = DatosBD.Recuperar(
-                "usuario",                                      //FROM usuario
-                new string[] {"dni","clave","nombre","tipo"}    //SELECT dni, clave, nombre, tipo
+                "usuario",                                                  //FROM usuario
+                new string[] {"dni","clave","nombre","discriminador"}       //SELECT dni, clave, nombre, discriminador
                 );
 
             foreach (Dictionary<string,string> datosUsuario in datosUsuarios)
@@ -26,18 +26,18 @@ namespace CapaNegocio
                 int dni = int.Parse(datosUsuario["dni"]);
                 string clave = datosUsuario["clave"];
                 string nombre = datosUsuario["nombre"];
-                string tipo = datosUsuario["tipo"];
+                string discriminador = datosUsuario["discriminador"];
 
                 Usuario usuario;
-                if (tipo == "duenio")
+                if (discriminador == "duenio")
                 {
                     usuario = new Duenio(dni, clave, nombre);
                     ((Duenio)usuario).RecuperarVehiculos();
                 }
-                else if (tipo == "administrador")
+                else if (discriminador == "administrador")
                     usuario = new Administrador(dni, clave, nombre);
                 else
-                    throw new FormatException("[RecuperarUsuarios] El tipo de usuario '" + tipo + "' no esta permitido (invalido para el usuario " + nombre + ")");
+                    throw new FormatException("[RecuperarUsuarios] El tipo de usuario '" + discriminador + "' no esta permitido (invalido para el usuario " + nombre + ")");
                
                 usuarios.Add(usuario);
             }
@@ -94,14 +94,8 @@ namespace CapaNegocio
         }
 
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
-        public abstract bool Registrar();
-        public abstract bool Actualizar();
-        public abstract bool Eliminar();
-
-        //Conexion a base de datos//
-        public static void PonerPathABaseAccess(string l)
-        {
-            DatosBD.PonerPathBaseAccess(l);
-        }
+        public abstract void Registrar();
+        public abstract void Actualizar();
+        public abstract void Eliminar();
     }
 }
