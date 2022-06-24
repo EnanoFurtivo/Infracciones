@@ -7,24 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
 using CapaNegocio;
 
 namespace CapaVista
 {
     public partial class Login : Form
     {
-        static string LugarBase;
         public Login()
         {
             InitializeComponent();
 
             //Conexion a base de datos//
-            LugarBase = Application.StartupPath;
-            Usuario.PonerPathABaseAccess(LugarBase);
+            DatosBD.PonerPathBaseAccess(Application.StartupPath);
 
             //Recupera las listas al comenzar la ejecucion//
-            Usuario.RecuperarUsuarios();
             TipoInfraccion.RecuperarTiposInfraccion();
+            Usuario.RecuperarUsuarios();
+            Infraccion.RecuperarUltimaInfraccion();
         }
 
         //Validar//

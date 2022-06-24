@@ -14,6 +14,11 @@ namespace CapaDatos
         private static string ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=";
         private static string DBFileName = "Infracciones.accdb";
 
+        private static OleDbConnection Con;
+        private static OleDbCommand Cmd;
+        private static OleDbDataAdapter Da;
+        private static DataSet Ds;
+
         public static void PonerPathBaseAccess(string path)
         {
             ConnectionString += path + @"\" + DBFileName;
@@ -53,11 +58,11 @@ namespace CapaDatos
 
             Console.WriteLine(query);
 
-            OleDbConnection Con = new OleDbConnection(ConnectionString);
+            Con = new OleDbConnection(ConnectionString);
             Con.Open();
 
-            OleDbDataAdapter Da = new OleDbDataAdapter(query, Con);
-            DataSet Ds = new DataSet();
+            Da = new OleDbDataAdapter(query, Con);
+            Ds = new DataSet();
             Da.Fill(Ds);
 
             foreach (DataColumn columna in Ds.Tables[0].Columns)
@@ -99,10 +104,10 @@ namespace CapaDatos
 
             Console.WriteLine(query);
 
-            OleDbConnection Con = new OleDbConnection(ConnectionString);
+            Con = new OleDbConnection(ConnectionString);
             Con.Open();
 
-            OleDbCommand Cmd = new OleDbCommand(query, Con);
+            Cmd = new OleDbCommand(query, Con);
             Cmd.ExecuteNonQuery();
 
             Con.Close();
@@ -131,10 +136,10 @@ namespace CapaDatos
 
             Console.WriteLine(query);
 
-            OleDbConnection Con = new OleDbConnection(ConnectionString);
+            Con = new OleDbConnection(ConnectionString);
             Con.Open();
 
-            OleDbCommand Cmd = new OleDbCommand(query, Con);
+            Cmd = new OleDbCommand(query, Con);
             Cmd.ExecuteNonQuery();
 
             Con.Close();
@@ -156,10 +161,10 @@ namespace CapaDatos
 
             Console.WriteLine(query);
 
-            OleDbConnection Con = new OleDbConnection(ConnectionString);
+            Con = new OleDbConnection(ConnectionString);
             Con.Open();
 
-            OleDbCommand Cmd = new OleDbCommand(query, Con);
+            Cmd = new OleDbCommand(query, Con);
             Cmd.ExecuteNonQuery();
 
             Con.Close();

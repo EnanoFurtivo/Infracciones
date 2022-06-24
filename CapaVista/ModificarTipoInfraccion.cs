@@ -44,8 +44,8 @@ namespace CapaVista
 
             char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
 
-            if(comboBoxTipo.SelectedItem != null)
-               TipoInfraccion.Actualizar(descripcion, importe, tipo);
+            if (comboBoxTipo.SelectedItem != null)
+                ;//TipoInfraccion.Actualizar(descripcion, importe, tipo);
             
             this.Close();
         }

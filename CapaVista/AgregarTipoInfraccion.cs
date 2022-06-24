@@ -38,8 +38,8 @@ namespace CapaVista
 
             char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
 
-            if(comboBoxTipo.SelectedItem != null)
-                TipoInfraccion.Registrar(descripcion, importe, tipo);
+            if (comboBoxTipo.SelectedItem != null)
+                ;//TipoInfraccion.Registrar(descripcion, importe, tipo);
             
             this.Close();
         }

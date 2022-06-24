@@ -35,7 +35,7 @@ namespace CapaVista
 
             Duenio duenio = new Duenio(dni, clave, nombre);
 
-            Usuario.RegistrarUsuario(duenio);
+            ;//Usuario.RegistrarUsuario(duenio);
         }
 
         //Validar//
