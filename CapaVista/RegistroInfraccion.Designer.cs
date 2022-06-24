@@ -39,7 +39,7 @@
             // comboBoxTipoInfraccion
             // 
             this.comboBoxTipoInfraccion.FormattingEnabled = true;
-            this.comboBoxTipoInfraccion.Location = new System.Drawing.Point(108, 107);
+            this.comboBoxTipoInfraccion.Location = new System.Drawing.Point(108, 129);
             this.comboBoxTipoInfraccion.Name = "comboBoxTipoInfraccion";
             this.comboBoxTipoInfraccion.Size = new System.Drawing.Size(186, 21);
             this.comboBoxTipoInfraccion.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // dateTimePickerFechaInfraccion
             // 
-            this.dateTimePickerFechaInfraccion.Location = new System.Drawing.Point(108, 241);
+            this.dateTimePickerFechaInfraccion.Location = new System.Drawing.Point(108, 292);
             this.dateTimePickerFechaInfraccion.Name = "dateTimePickerFechaInfraccion";
             this.dateTimePickerFechaInfraccion.Size = new System.Drawing.Size(186, 20);
             this.dateTimePickerFechaInfraccion.TabIndex = 1;
@@ -55,7 +55,7 @@
             // comboBoxVehiculo
             // 
             this.comboBoxVehiculo.FormattingEnabled = true;
-            this.comboBoxVehiculo.Location = new System.Drawing.Point(108, 170);
+            this.comboBoxVehiculo.Location = new System.Drawing.Point(108, 206);
             this.comboBoxVehiculo.Name = "comboBoxVehiculo";
             this.comboBoxVehiculo.Size = new System.Drawing.Size(186, 21);
             this.comboBoxVehiculo.TabIndex = 2;
@@ -66,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(105, 223);
+            this.label1.Location = new System.Drawing.Point(105, 274);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 15);
             this.label1.TabIndex = 3;
@@ -77,7 +77,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(127, 64);
+            this.label2.Location = new System.Drawing.Point(127, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 4;
@@ -85,15 +85,16 @@
             // 
             // buttonRegistrarInfraccion
             // 
+            this.buttonRegistrarInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRegistrarInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegistrarInfraccion.Location = new System.Drawing.Point(129, 309);
+            this.buttonRegistrarInfraccion.Location = new System.Drawing.Point(129, 388);
             this.buttonRegistrarInfraccion.Name = "buttonRegistrarInfraccion";
             this.buttonRegistrarInfraccion.Size = new System.Drawing.Size(144, 28);
             this.buttonRegistrarInfraccion.TabIndex = 5;
             this.buttonRegistrarInfraccion.Text = "Registrar";
-            this.buttonRegistrarInfraccion.UseVisualStyleBackColor = true;
+            this.buttonRegistrarInfraccion.UseVisualStyleBackColor = false;
             this.buttonRegistrarInfraccion.Click += new System.EventHandler(this.buttonRegistrarInfraccion_Click);
             // 
             // RegistroInfraccion

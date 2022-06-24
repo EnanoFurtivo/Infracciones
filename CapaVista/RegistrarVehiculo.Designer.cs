@@ -39,6 +39,7 @@
             // 
             // buttonRegistrarVehiculo
             // 
+            this.buttonRegistrarVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRegistrarVehiculo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -47,7 +48,7 @@
             this.buttonRegistrarVehiculo.Size = new System.Drawing.Size(144, 28);
             this.buttonRegistrarVehiculo.TabIndex = 11;
             this.buttonRegistrarVehiculo.Text = "Registrar";
-            this.buttonRegistrarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonRegistrarVehiculo.UseVisualStyleBackColor = false;
             this.buttonRegistrarVehiculo.Click += new System.EventHandler(this.buttonRegistrarVehiculo_Click);
             // 
             // label2

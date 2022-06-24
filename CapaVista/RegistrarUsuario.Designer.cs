@@ -65,6 +65,7 @@
             // 
             // buttonRegistrarDuenio
             // 
+            this.buttonRegistrarDuenio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarDuenio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarDuenio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRegistrarDuenio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -73,7 +74,7 @@
             this.buttonRegistrarDuenio.Size = new System.Drawing.Size(144, 28);
             this.buttonRegistrarDuenio.TabIndex = 17;
             this.buttonRegistrarDuenio.Text = "Registrar";
-            this.buttonRegistrarDuenio.UseVisualStyleBackColor = true;
+            this.buttonRegistrarDuenio.UseVisualStyleBackColor = false;
             this.buttonRegistrarDuenio.Click += new System.EventHandler(this.buttonRegistrarDuenio_Click);
             // 
             // label2
