@@ -93,7 +93,7 @@
             // 
             // buttonAgregarTipoInfraccion
             // 
-            this.buttonAgregarTipoInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.buttonAgregarTipoInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonAgregarTipoInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregarTipoInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAgregarTipoInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

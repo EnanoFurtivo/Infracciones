@@ -56,7 +56,7 @@
             // 
             // buttonEliminarInfraccion
             // 
-            this.buttonEliminarInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(100)))));
+            this.buttonEliminarInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonEliminarInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminarInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonEliminarInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

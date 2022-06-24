@@ -109,7 +109,7 @@ namespace CapaNegocio
         }
         public void Eliminar()
         {
-            return DatosBD.Eliminar();
+            throw new InvalidOperationException();
         }
     }
 }

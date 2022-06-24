@@ -13,35 +13,36 @@ namespace CapaVista
 {
     public partial class EliminarInfraccion : Form
     {
-        Controller Controller;
-        public EliminarInfraccion(Controller ctr)
+        public EliminarInfraccion()
         {
             InitializeComponent();
-            Controller = ctr;
-            RefrescarLista();
+            MostrarLista();
         }
-        private List<Infraccion> RefrescarLista()
+        private void MostrarLista()
         {
-            //Carga las listas para las infracciones
-            List<Usuario> usuarios = Controller.Usuarios;
-            List<Infraccion> lista = new List<Infraccion>();
+            //Carga las lista de las infracciones pendientes
+            List<Vehiculo> vehiculos = Vehiculo.GetVehiculos();
+            List<Infraccion> infracciones = new List<Infraccion>();
 
-            for (int i = 0; i < usuarios.Count; i++)
-                if(usuarios[i].GetType() == typeof(Duenio))
-                   // Duenio usario = (Duenio)usuarios[i];
-                //for (int j = 0; j < usuarios[i].MostrarLista().Count; j++)
-                    lista.Add(usuarios(typeof(Duenio))[i].MostrarLista()[i]);
+            for (int i = 0; i < vehiculos.Count; i++)
+            {
+                infracciones = vehiculos[i].GetInfraccionesPendientes();
 
-            for (int i = 0; i < lista.Count; i++)
-                listBoxInfraccion.Items.Add(lista.ToString());
-
-            return lista;
+                for (int j = 0; j < infracciones.Count; j++)
+                    listBoxInfraccion.Items.Add(infracciones[j]);
+            }
         }
         private void listBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
         {
             Infraccion infraccion = (Infraccion)listBoxInfraccion.SelectedItem;
-            Controller.EliminarInfraccion(infraccion);
-            RefrescarLista();
+
+            if(listBoxInfraccion.SelectedItem != null)
+            {
+                Vehiculo vehiculo = infraccion.Vehiculo;
+                vehiculo.EliminarInfraccion(infraccion);
+            }
+
+            MostrarLista();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CapaNegocio
     public class Duenio : Usuario
     {
         //Lista de vehiculos//
-        public List<Vehiculo> Vehiculos { get; internal set; }
+        public List<Vehiculo> Vehiculos { get; set; }
         public void RecuperarVehiculos()
         {
             List<Vehiculo> vehiculos = new List<Vehiculo>();
@@ -40,7 +40,6 @@ namespace CapaNegocio
         {
             Vehiculos = new List<Vehiculo>();
         }
-
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
         public override void Registrar()
         {

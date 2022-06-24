@@ -29,16 +29,12 @@ namespace CapaVista
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDni = new System.Windows.Forms.TextBox();
             this.textBoxClave = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonAcceder = new System.Windows.Forms.Button();
-            this.labelError = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,27 +95,7 @@ namespace CapaVista
             this.buttonAcceder.TabIndex = 5;
             this.buttonAcceder.Text = "Acceder";
             this.buttonAcceder.UseVisualStyleBackColor = true;
-            // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelError.Location = new System.Drawing.Point(153, 342);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(35, 13);
-            this.labelError.TabIndex = 6;
-            this.labelError.Text = "label4";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(150, -25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.buttonAcceder.Click += new System.EventHandler(this.buttonAcceder_Click);
             // 
             // Login
             // 
@@ -127,17 +103,14 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(484, 461);
-            this.Controls.Add(this.labelError);
             this.Controls.Add(this.buttonAcceder);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxClave);
             this.Controls.Add(this.textBoxDni);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,8 +124,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonAcceder;
-        private System.Windows.Forms.Label labelError;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

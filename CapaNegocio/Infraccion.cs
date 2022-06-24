@@ -75,7 +75,7 @@ namespace CapaNegocio
 
         public void Registrar()
         {
-            return DatosBD.Registrar();
+            throw new InvalidOperationException();
         }
         public void Actualizar()
         {
@@ -83,7 +83,7 @@ namespace CapaNegocio
         }
         public void Eliminar()
         {
-            return DatosBD.Eliminar();
+            throw new InvalidOperationException();
         }
     }
 }

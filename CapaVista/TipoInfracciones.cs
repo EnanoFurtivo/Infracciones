@@ -13,38 +13,32 @@ namespace CapaVista
 {
     public partial class TipoInfracciones : Form
     {
-        Controller Controller;
-        public TipoInfracciones(Controller ctr)
+        public TipoInfracciones()
         {
             InitializeComponent();
-            Controller = ctr;
-            RefrescarLista();
+            MostrarLista();
         }
 
-        private List<TipoInfraccion> RefrescarLista()
+        private void MostrarLista()
         {
-            List<TipoInfraccion> lista = Controller.TiposInfraccion;
-
             listBoxTipoInfraccion.Items.Clear();
 
-            for (int i = 0; i < lista.Count; i++)
-                listBoxTipoInfraccion.Items.Add(lista.ToString());
-
-            return lista;
+            for (int i = 0; i < TipoInfraccion.TiposInfraccion.Count; i++)
+                listBoxTipoInfraccion.Items.Add(TipoInfraccion.TiposInfraccion.ToString());
         }
 
         private void buttonAgregarTipoInfraccion_Click(object sender, EventArgs e)
         {
-            AgregarTipoInfraccion form = new AgregarTipoInfraccion(Controller);
+            AgregarTipoInfraccion form = new AgregarTipoInfraccion();
             form.ShowDialog();
-            RefrescarLista();
+            MostrarLista();
         }
 
         private void buttonModificarTipoInfraccion_Click(object sender, EventArgs e)
         {
-            ModificarTipoInfraccion form = new ModificarTipoInfraccion(Controller, (TipoInfraccion)listBoxTipoInfraccion.SelectedItem);
+            ModificarTipoInfraccion form = new ModificarTipoInfraccion((TipoInfraccion)listBoxTipoInfraccion.SelectedItem);
             form.ShowDialog();
-            RefrescarLista();
+            MostrarLista();
         }
     }
 }

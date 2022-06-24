@@ -12,13 +12,12 @@ namespace CapaDatos
     public static class DatosBD
     {
         private static string ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=";
-        private static string DBFileName = "ClubDeportivo.accdb";
+        private static string DBFileName = "Infracciones.accdb";
 
         public static void PonerPathBaseAccess(string path)
         {
             ConnectionString += path + @"\" + DBFileName;
         }
-
         public static List<Dictionary<string, string>> Recuperar(string tabla, string[] columnas = null, string[,] condiciones = null, string[] operadores = null)
         {
             List<Dictionary<string, string>> datos = new List<Dictionary<string, string>>();

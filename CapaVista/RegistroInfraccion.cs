@@ -13,28 +13,17 @@ namespace CapaVista
 {
     public partial class RegistroInfraccion : Form
     {
-        Controller controller;
-        public RegistroInfraccion(Controller ctr)
+        public RegistroInfraccion()
         {
             InitializeComponent();
-            controller = ctr;
 
             comboBoxTipoInfraccion.Items.Clear();
-            for(int i = 0; i < controller.TiposInfraccion.Count; i++)
-                comboBoxTipoInfraccion.Items.Add(controller.TiposInfraccion[i].ToString());
-
-            List<Usuario> usuarios = controller.Usuarios;
-            List<Duenio> duenios = new List<Duenio>();
-
-            for(int i = 0;i < usuarios.Count; i++)
-                if(usuarios[i].GetType() == typeof(Duenio))
-                    duenios.Add((Duenio)usuarios[i]);
-
+            for(int i = 0; i < TipoInfraccion.TiposInfraccion.Count; i++)
+                comboBoxTipoInfraccion.Items.Add(TipoInfraccion.TiposInfraccion[i].ToString());
 
             comboBoxVehiculo.Items.Clear();
-            for(int i = 0; i < duenios.Count; i++)
-                for(int j = 0; j < duenios[i].Vehiculos.Count; j++)
-                    comboBoxVehiculo.Items.Add(duenios[i].Vehiculos[j].ToString());
+            for(int i = 0; i < Vehiculo.GetVehiculos().Count; i++)
+                comboBoxVehiculo.Items.Add(Vehiculo.GetVehiculos().ToString());
         }
 
         private void buttonRegistrarInfraccion_Click(object sender, EventArgs e)
@@ -44,10 +33,7 @@ namespace CapaVista
             DateTime dateTime = dateTimePickerFechaInfraccion.Value;
 
             if(dateTime != null && tipoInfraccion != null && vehiculo != null)
-            {
-               // Infraccion infraccion = new Infraccion(dateTime, tipoInfraccion, vehiculo);
-                vehiculo.RegistrarInfraccion(dateTime, tipoInfraccion);
-            }
+                vehiculo.RegistrarInfraccion(tipoInfraccion, dateTime);
         }
     }
 }
