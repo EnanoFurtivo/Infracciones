@@ -8,11 +8,15 @@ namespace CapaNegocio
 {
     public class TipoInfraccion : IDatos
     {
+        public static List<TipoInfraccion> TiposInfraccion;
         public static bool RecuperarTiposInfraccion()
         {
             throw new NotImplementedException();
         }
-        public static List<TipoInfraccion> TiposInfraccion;
+        public static TipoInfraccion GetTipoInfraccion(int codigo)
+        {
+            return TiposInfraccion.Find(u => u.Codigo == codigo);
+        }
         private static int UltimoTipoInfraccion;
 
         private enum Descuento : int

@@ -11,9 +11,28 @@ namespace CapaNegocio
     {
         //Lista de vehiculos//
         public List<Vehiculo> Vehiculos { get; internal set; }
-        public bool RecuperarVehiculos()
+        public void RecuperarVehiculos()
         {
-            DatosBD.Recuperar();
+            List<Vehiculo> vehiculos = new List<Vehiculo>();
+
+            List<Dictionary<string, string>> datosVehiculos = DatosBD.Recuperar(
+                "vehiculo",                             //FROM vehiculo
+                new string[]  {"dominio","marca"},      //SELECT dominio, marca
+                new string[,] {{"dni",Dni.ToString()}}  //WHERE dni = Dni
+                );
+
+            foreach (Dictionary<string, string> datosUsuario in datosVehiculos)
+            {
+                string dominio = datosUsuario["dominio"];
+                string marca = datosUsuario["marca"];
+
+                Vehiculo vehiculo = new Vehiculo(dominio,this,marca);
+                vehiculo.RecuperarInfracciones();
+
+                vehiculos.Add(vehiculo);
+            }
+
+            Vehiculos = vehiculos;
         }
 
         //Constructor//

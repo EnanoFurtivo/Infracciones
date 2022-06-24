@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,37 @@ namespace CapaNegocio
     {
         //Lista estatica de usuarios//
         public static List<Usuario> Usuarios;
-        public static bool RecuperarUsuarios()
+        public static void RecuperarUsuarios()
         {
-            DatosBD.Recuperar();
+            List<Usuario> usuarios = new List<Usuario>();
+
+            List<Dictionary<string,string>> datosUsuarios = DatosBD.Recuperar(
+                "usuario", 
+                new string[] {"dni","clave","nombre","tipo"}
+                );
+
+            foreach (Dictionary<string,string> datosUsuario in datosUsuarios)
+            {
+                int dni = int.Parse(datosUsuario["dni"]);
+                string clave = datosUsuario["clave"];
+                string nombre = datosUsuario["nombre"];
+                string tipo = datosUsuario["tipo"];
+
+                Usuario usuario;
+                if (tipo == "duenio")
+                {
+                    usuario = new Duenio(dni, clave, nombre);
+                    ((Duenio)usuario).RecuperarVehiculos();
+                }
+                else if (tipo == "administrador")
+                    usuario = new Administrador(dni, clave, nombre);
+                else
+                    throw new FormatException("[RecuperarUsuarios] El tipo de usuario '" + tipo + "' no esta permitido (invalido para el usuario " + nombre + ")");
+               
+                usuarios.Add(usuario);
+            }
+
+            Usuarios = usuarios;
         }
         public static List<Usuario> GetUsuarios(Type filterType)
         {
