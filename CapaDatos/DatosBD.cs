@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaNegocio
+namespace CapaDatos
 {
-    public class Administrador : Usuario
+    public static class DatosBD
     {
-        public Administrador(int dni, string clave, string nombre) : base(dni, clave, nombre) 
-        {
-        }
-
-        public override bool Actualizar()
+        public static bool Recuperar()
         {
             throw new NotImplementedException();
         }
-        public override bool Eliminar()
+        public static bool Registrar()
         {
             throw new NotImplementedException();
         }
-        public override bool Registrar()
+        public static bool Actualizar()
+        {
+            throw new NotImplementedException();
+        }
+        public static bool Eliminar()
         {
             throw new NotImplementedException();
         }

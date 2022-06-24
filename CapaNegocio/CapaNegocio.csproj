@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador.cs" />
-    <Compile Include="Controller.cs" />
     <Compile Include="Duenio.cs" />
+    <Compile Include="IDatos.cs" />
     <Compile Include="Infraccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoInfraccion.cs" />

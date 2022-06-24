@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class TipoInfraccion
+    public class TipoInfraccion : IDatos
     {
+        public static bool RecuperarTiposInfraccion()
+        {
+            throw new NotImplementedException();
+        }
+        public static List<TipoInfraccion> TiposInfraccion;
+        private static int UltimoTipoInfraccion;
+
         private enum Descuento : int
         {
             Leve20Dias = 25, //%
@@ -15,12 +22,10 @@ namespace CapaNegocio
             Grave25Dias = 20  //%
         }
 
-        public static int UltimoTipoInfraccion { get; set; }
-
         public int Codigo { get; internal set; }
-        public string Descripcion { get; internal set; }
-        public double Importe { get; internal set; }
-        public char Tipo { get; internal set; }
+        public string Descripcion { get; set; }
+        public double Importe { get; set; }
+        public char Tipo { get; set; }
 
         public TipoInfraccion(string descripcion, double importe, char tipo)
         {
@@ -30,13 +35,6 @@ namespace CapaNegocio
             Codigo = ++UltimoTipoInfraccion;
         }
 
-        public void Modificar(string descripcion, double importe, char tipo)
-        {
-            Descripcion = descripcion != "" ? descripcion : throw new InvalidOperationException("la descripcion no puede ser vacio");
-            Importe = importe > 0 ? importe : throw new ArgumentOutOfRangeException(nameof(importe));
-            Tipo = tipo;
-        }
-        
         /// <summary>
         /// Calcula el monto a pagar de la infraccion dado el importe base y la cantidad de dias restantes hasta el vencimiento. El resultado depende del tipo de infraccion.
         /// </summary>
@@ -65,6 +63,19 @@ namespace CapaNegocio
                 else
                     return importeBase;
             }
+        }
+
+        public bool Registrar()
+        {
+            throw new NotImplementedException();
+        }
+        public bool Actualizar()
+        {
+            throw new NotImplementedException();
+        }
+        public bool Eliminar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

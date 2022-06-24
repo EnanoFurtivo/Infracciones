@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class Infraccion
+    public class Infraccion : IDatos
     {
-        public static int UltimaInfraccion { get; set; }
+        private static int CantidadDiasVencimiento = 30;
+        private static int UltimaInfraccion;
 
         public int NumeroInfraccion { get; internal set; }
         public DateTime FechaInfraccion { get; internal set; }
         public DateTime FechaVencimiento { get; internal set; }
-        public DateTime? FechaPago { get; set; }
+        public DateTime? FechaPago { get; internal set; }
         public TipoInfraccion TipoInfraccion { get; internal set; }
         public Vehiculo Vehiculo { get; internal set; }
         /// <summary>
@@ -25,10 +27,10 @@ namespace CapaNegocio
         /// </summary>
         public double MontoInfraccion { get { return GetMontoInfraccion(); } }
 
-        public Infraccion(DateTime fechaVencimiento, TipoInfraccion tipoInfraccion, Vehiculo vehiculo)
+        public Infraccion(DateTime fechaInfraccion, TipoInfraccion tipoInfraccion, Vehiculo vehiculo)
         {
-            FechaInfraccion = DateTime.Now;
-            FechaVencimiento = fechaVencimiento;
+            FechaInfraccion = fechaInfraccion;
+            FechaVencimiento = fechaInfraccion + new TimeSpan(CantidadDiasVencimiento,0,0,0);
             FechaPago = null;
             TipoInfraccion = tipoInfraccion ?? throw new ArgumentNullException(nameof(tipoInfraccion));
             Vehiculo = vehiculo ?? throw new ArgumentNullException(nameof(vehiculo));
@@ -41,13 +43,26 @@ namespace CapaNegocio
             TimeSpan timeDiff = FechaVencimiento - DateTime.Now;
             return TipoInfraccion.GetMontoInfraccion(timeDiff.Days, ImporteBase);
         }
-        public void RegistrarPago()
+        public void RegistrarPago(DateTime fechaPago)
         {
-            FechaPago = !EstaPaga() ? DateTime.Now : throw new InvalidOperationException("ya esta registrado el pago");
+            FechaPago = !EstaPaga() ? fechaPago : throw new InvalidOperationException("ya esta registrado el pago");
         }
         public bool EstaPaga()
         {
             return FechaPago != null;
+        }
+
+        public bool Registrar()
+        {
+            return DatosBD.Registrar();
+        }
+        public bool Actualizar()
+        {
+            throw new InvalidOperationException();
+        }
+        public bool Eliminar()
+        {
+            return DatosBD.Eliminar();
         }
     }
 }

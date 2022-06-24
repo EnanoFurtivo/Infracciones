@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,36 +9,31 @@ namespace CapaNegocio
 {
     public class Duenio : Usuario
     {
+        //Lista de vehiculos//
         public List<Vehiculo> Vehiculos { get; internal set; }
+        public bool RecuperarVehiculos()
+        {
+            DatosBD.Recuperar();
+        }
 
+        //Constructor//
         public Duenio(int dni, string clave, string nombre) : base(dni, clave, nombre)
         {
             Vehiculos = new List<Vehiculo>();
         }
 
-        public void RegistrarVehiculo(Vehiculo vehiculo)
+        //Registrar, actualizar y/o eliminar el objeto de la persistencia//
+        public override bool Registrar()
         {
-            if (vehiculo == null)
-                throw new ArgumentNullException(nameof(vehiculo));
-
-            Vehiculos.Add(vehiculo);
+            throw new NotImplementedException();
         }
-        public void EliminarVehiculo(Vehiculo vehiculo)
+        public override bool Actualizar()
         {
-            if (vehiculo == null)
-                throw new ArgumentNullException(nameof(vehiculo));
-
-            Vehiculos.Remove(vehiculo);
+            throw new NotImplementedException();
         }
-        public override List<Infraccion> MostrarLista()
+        public override bool Eliminar()
         {
-            List<Infraccion> lista = new List<Infraccion>();
-
-            for(int i = 0; i < Vehiculos.Count; i++)
-                for(int j = 0; i < Vehiculos[i].Infracciones.Count; j++)
-                    lista.Add(Vehiculos[i].Infracciones[j]);
-
-            return lista;
+            throw new NotImplementedException();
         }
     }
 }
