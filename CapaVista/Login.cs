@@ -25,6 +25,7 @@ namespace CapaVista
             //Recupera las listas al comenzar la ejecucion//
             Usuario.RecuperarUsuarios();
             TipoInfraccion.RecuperarTiposInfraccion();
+            Infraccion.RecuperarUltimaInfraccion();
         }
 
         //Validar//
