@@ -10,21 +10,23 @@ namespace CapaNegocio
     public class TipoInfraccion : IDatos
     {
         public static List<TipoInfraccion> TiposInfraccion;
+        private static int UltimoTipoInfraccion;
         public static void RecuperarTiposInfraccion()
         {
             List<TipoInfraccion> tiposInfraccion = new List<TipoInfraccion>();
 
-            List<Dictionary<string, string>> datosUsuarios = DatosBD.Recuperar(
-                "tiposInfraccion",                              //FROM tiposInfraccion
-                new string[] {"descripcion","importe","tipo"}   //SELECT descripcion, importe, tipo
+            List<Dictionary<string, string>> datosTiposInfraccion = DatosBD.Recuperar(
+                "tiposInfraccion",                                      //FROM tiposInfraccion
+                new string[] {"codigo","descripcion","importe","tipo"}  //SELECT codigo, descripcion, importe, tipo
                 );
 
-            foreach (Dictionary<string, string> datosUsuario in datosUsuarios)
+            foreach (Dictionary<string, string> datosTipoInfraccion in datosTiposInfraccion)
             {
-                string descripcion = datosUsuario["descripcion"];
-                double importe = double.Parse(datosUsuario["importe"]);
-                char tipo = char.Parse(datosUsuario["tipo"]);
-                tiposInfraccion.Add(new TipoInfraccion(descripcion, importe, tipo));
+                int codigo = int.Parse(datosTipoInfraccion["codigo"]);
+                string descripcion = datosTipoInfraccion["descripcion"];
+                double importe = double.Parse(datosTipoInfraccion["importe"]);
+                char tipo = char.Parse(datosTipoInfraccion["tipo"]);
+                tiposInfraccion.Add(new TipoInfraccion(codigo, descripcion, importe, tipo));
             }
 
             TiposInfraccion = tiposInfraccion;
@@ -34,8 +36,7 @@ namespace CapaNegocio
         {
             return TiposInfraccion.Find(u => u.Codigo == codigo);
         }
-        private static int UltimoTipoInfraccion;
-
+        
         private enum Descuento : int
         {
             Leve20Dias = 25, //%
@@ -54,6 +55,13 @@ namespace CapaNegocio
             Importe = importe > 0 ? importe : throw new ArgumentOutOfRangeException(nameof(importe));
             Tipo = tipo;
             Codigo = ++UltimoTipoInfraccion;
+        }
+        private TipoInfraccion(int codigo, string descripcion, double importe, char tipo)
+        {
+            Descripcion = descripcion ?? throw new ArgumentNullException(nameof(descripcion));
+            Importe = importe > 0 ? importe : throw new ArgumentOutOfRangeException(nameof(importe));
+            Tipo = tipo;
+            Codigo = codigo;
         }
 
         /// <summary>
