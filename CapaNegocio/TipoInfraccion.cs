@@ -30,6 +30,13 @@ namespace CapaNegocio
             Codigo = ++UltimoTipoInfraccion;
         }
 
+        public void Modificar(string descripcion, double importe, char tipo)
+        {
+            Descripcion = descripcion != "" ? descripcion : throw new InvalidOperationException("la descripcion no puede ser vacio");
+            Importe = importe > 0 ? importe : throw new ArgumentOutOfRangeException(nameof(importe));
+            Tipo = tipo;
+        }
+        
         /// <summary>
         /// Calcula el monto a pagar de la infraccion dado el importe base y la cantidad de dias restantes hasta el vencimiento. El resultado depende del tipo de infraccion.
         /// </summary>
