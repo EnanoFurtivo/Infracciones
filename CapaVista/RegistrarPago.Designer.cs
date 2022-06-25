@@ -41,30 +41,33 @@
             // checkedListBoxInfraccion
             // 
             this.checkedListBoxInfraccion.BackColor = System.Drawing.Color.MintCream;
+            this.checkedListBoxInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxInfraccion.FormattingEnabled = true;
             this.checkedListBoxInfraccion.Location = new System.Drawing.Point(223, 84);
             this.checkedListBoxInfraccion.Name = "checkedListBoxInfraccion";
-            this.checkedListBoxInfraccion.Size = new System.Drawing.Size(167, 334);
+            this.checkedListBoxInfraccion.Size = new System.Drawing.Size(167, 319);
             this.checkedListBoxInfraccion.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(112, 18);
+            this.label1.Location = new System.Drawing.Point(120, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 20);
+            this.label1.Size = new System.Drawing.Size(159, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Infracciones cometidas";
             // 
             // listBoxVehiculos
             // 
             this.listBoxVehiculos.BackColor = System.Drawing.Color.MintCream;
+            this.listBoxVehiculos.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxVehiculos.FormattingEnabled = true;
+            this.listBoxVehiculos.ItemHeight = 18;
             this.listBoxVehiculos.Location = new System.Drawing.Point(12, 84);
             this.listBoxVehiculos.Name = "listBoxVehiculos";
-            this.listBoxVehiculos.Size = new System.Drawing.Size(167, 329);
+            this.listBoxVehiculos.Size = new System.Drawing.Size(167, 328);
             this.listBoxVehiculos.TabIndex = 3;
             this.listBoxVehiculos.SelectedIndexChanged += new System.EventHandler(this.listBoxVehiculos_SelectedIndexChanged);
             // 
@@ -73,10 +76,11 @@
             this.buttonRegistrarPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarPagos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarPagos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRegistrarPagos.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarPagos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegistrarPagos.Location = new System.Drawing.Point(284, 449);
+            this.buttonRegistrarPagos.Location = new System.Drawing.Point(259, 449);
             this.buttonRegistrarPagos.Name = "buttonRegistrarPagos";
-            this.buttonRegistrarPagos.Size = new System.Drawing.Size(106, 32);
+            this.buttonRegistrarPagos.Size = new System.Drawing.Size(131, 32);
             this.buttonRegistrarPagos.TabIndex = 4;
             this.buttonRegistrarPagos.Text = "Registrar Pagos";
             this.buttonRegistrarPagos.UseVisualStyleBackColor = false;
@@ -85,22 +89,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(12, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Vehiculos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(219, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 20);
+            this.label3.Size = new System.Drawing.Size(83, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "Infracciones";
             // 
@@ -114,11 +118,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(12, 438);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 20);
+            this.label4.Size = new System.Drawing.Size(168, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Seleccionar fecha de pago";
             // 

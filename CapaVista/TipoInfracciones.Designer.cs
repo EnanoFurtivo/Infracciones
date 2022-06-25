@@ -37,10 +37,12 @@
             // listBoxTipoInfraccion
             // 
             this.listBoxTipoInfraccion.BackColor = System.Drawing.Color.MintCream;
+            this.listBoxTipoInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxTipoInfraccion.FormattingEnabled = true;
+            this.listBoxTipoInfraccion.ItemHeight = 18;
             this.listBoxTipoInfraccion.Location = new System.Drawing.Point(86, 53);
             this.listBoxTipoInfraccion.Name = "listBoxTipoInfraccion";
-            this.listBoxTipoInfraccion.Size = new System.Drawing.Size(230, 342);
+            this.listBoxTipoInfraccion.Size = new System.Drawing.Size(230, 328);
             this.listBoxTipoInfraccion.TabIndex = 0;
             // 
             // buttonAgregarTipoInfraccion
@@ -48,10 +50,11 @@
             this.buttonAgregarTipoInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonAgregarTipoInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregarTipoInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAgregarTipoInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregarTipoInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonAgregarTipoInfraccion.Location = new System.Drawing.Point(86, 419);
             this.buttonAgregarTipoInfraccion.Name = "buttonAgregarTipoInfraccion";
-            this.buttonAgregarTipoInfraccion.Size = new System.Drawing.Size(112, 43);
+            this.buttonAgregarTipoInfraccion.Size = new System.Drawing.Size(112, 52);
             this.buttonAgregarTipoInfraccion.TabIndex = 1;
             this.buttonAgregarTipoInfraccion.Text = "Agregar Tipo de Infraccion";
             this.buttonAgregarTipoInfraccion.UseVisualStyleBackColor = false;
@@ -62,10 +65,11 @@
             this.buttonModificarTipoInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonModificarTipoInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonModificarTipoInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonModificarTipoInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModificarTipoInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonModificarTipoInfraccion.Location = new System.Drawing.Point(204, 420);
             this.buttonModificarTipoInfraccion.Name = "buttonModificarTipoInfraccion";
-            this.buttonModificarTipoInfraccion.Size = new System.Drawing.Size(112, 42);
+            this.buttonModificarTipoInfraccion.Size = new System.Drawing.Size(112, 51);
             this.buttonModificarTipoInfraccion.TabIndex = 2;
             this.buttonModificarTipoInfraccion.Text = "Modificar Tipo de Infraccion";
             this.buttonModificarTipoInfraccion.UseVisualStyleBackColor = false;
@@ -74,11 +78,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(82, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 20);
+            this.label1.Size = new System.Drawing.Size(132, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tipo de Infracciones";
             // 

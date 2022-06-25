@@ -38,10 +38,11 @@
             // 
             // comboBoxTipoInfraccion
             // 
+            this.comboBoxTipoInfraccion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTipoInfraccion.FormattingEnabled = true;
             this.comboBoxTipoInfraccion.Location = new System.Drawing.Point(108, 129);
             this.comboBoxTipoInfraccion.Name = "comboBoxTipoInfraccion";
-            this.comboBoxTipoInfraccion.Size = new System.Drawing.Size(186, 21);
+            this.comboBoxTipoInfraccion.Size = new System.Drawing.Size(186, 23);
             this.comboBoxTipoInfraccion.TabIndex = 0;
             this.comboBoxTipoInfraccion.Text = "Seleccione un tipo de infraccion";
             // 
@@ -54,32 +55,33 @@
             // 
             // comboBoxVehiculo
             // 
+            this.comboBoxVehiculo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVehiculo.FormattingEnabled = true;
             this.comboBoxVehiculo.Location = new System.Drawing.Point(108, 206);
             this.comboBoxVehiculo.Name = "comboBoxVehiculo";
-            this.comboBoxVehiculo.Size = new System.Drawing.Size(186, 21);
+            this.comboBoxVehiculo.Size = new System.Drawing.Size(186, 23);
             this.comboBoxVehiculo.TabIndex = 2;
-            this.comboBoxVehiculo.Text = "Seleccione Vehiculo";
+            this.comboBoxVehiculo.Text = "Seleccione un Vehiculo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(105, 274);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 15);
+            this.label1.Size = new System.Drawing.Size(184, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Seleccione fecha de vencimiento";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(127, 65);
+            this.label2.Location = new System.Drawing.Point(134, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 20);
+            this.label2.Size = new System.Drawing.Size(136, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Registrar Infraccion";
             // 
@@ -88,6 +90,7 @@
             this.buttonRegistrarInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarInfraccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRegistrarInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonRegistrarInfraccion.Location = new System.Drawing.Point(129, 388);
             this.buttonRegistrarInfraccion.Name = "buttonRegistrarInfraccion";

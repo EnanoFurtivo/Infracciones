@@ -41,26 +41,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(107, 307);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
+            this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 20;
             this.label3.Text = "Clave";
             // 
             // textBoxClave
             // 
+            this.textBoxClave.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxClave.Location = new System.Drawing.Point(110, 325);
             this.textBoxClave.Name = "textBoxClave";
-            this.textBoxClave.Size = new System.Drawing.Size(186, 20);
+            this.textBoxClave.Size = new System.Drawing.Size(186, 26);
             this.textBoxClave.TabIndex = 19;
             // 
             // textBoxDni
             // 
+            this.textBoxDni.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDni.Location = new System.Drawing.Point(110, 162);
             this.textBoxDni.Name = "textBoxDni";
-            this.textBoxDni.Size = new System.Drawing.Size(186, 20);
+            this.textBoxDni.Size = new System.Drawing.Size(186, 26);
             this.textBoxDni.TabIndex = 18;
             // 
             // buttonRegistrarDuenio
@@ -68,6 +70,7 @@
             this.buttonRegistrarDuenio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarDuenio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarDuenio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRegistrarDuenio.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarDuenio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonRegistrarDuenio.Location = new System.Drawing.Point(133, 396);
             this.buttonRegistrarDuenio.Name = "buttonRegistrarDuenio";
@@ -80,41 +83,42 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(129, 82);
+            this.label2.Location = new System.Drawing.Point(142, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.Size = new System.Drawing.Size(122, 19);
             this.label2.TabIndex = 16;
             this.label2.Text = "Registrar Usuario";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(107, 144);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 15);
+            this.label1.Size = new System.Drawing.Size(29, 18);
             this.label1.TabIndex = 21;
             this.label1.Text = "Dni";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(107, 221);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 22;
             this.label4.Text = "Nombre";
             // 
             // textBoxNombre
             // 
+            this.textBoxNombre.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.Location = new System.Drawing.Point(110, 239);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(186, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(186, 26);
             this.textBoxNombre.TabIndex = 23;
             // 
             // RegistrarUsuario

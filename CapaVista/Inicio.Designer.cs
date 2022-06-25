@@ -40,17 +40,19 @@
             this.buttonCerrarSesion = new System.Windows.Forms.Button();
             this.buttonRegistrarInfraccion = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panelSubMenuInfracciones = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panelSubMenuInfracciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelBienvenida
             // 
             this.labelBienvenida.AutoSize = true;
-            this.labelBienvenida.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold);
+            this.labelBienvenida.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.labelBienvenida.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelBienvenida.Location = new System.Drawing.Point(216, 23);
+            this.labelBienvenida.Location = new System.Drawing.Point(216, 22);
             this.labelBienvenida.Name = "labelBienvenida";
-            this.labelBienvenida.Size = new System.Drawing.Size(213, 20);
+            this.labelBienvenida.Size = new System.Drawing.Size(206, 27);
             this.labelBienvenida.TabIndex = 0;
             this.labelBienvenida.Text = "Bienvenido de Nuevo";
             // 
@@ -61,9 +63,9 @@
             this.buttonFormInfraccion.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaption;
             this.buttonFormInfraccion.FlatAppearance.BorderSize = 0;
             this.buttonFormInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonFormInfraccion.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonFormInfraccion.Font = new System.Drawing.Font("Calibri", 11F);
             this.buttonFormInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonFormInfraccion.Location = new System.Drawing.Point(0, 193);
+            this.buttonFormInfraccion.Location = new System.Drawing.Point(0, 197);
             this.buttonFormInfraccion.Name = "buttonFormInfraccion";
             this.buttonFormInfraccion.Size = new System.Drawing.Size(209, 45);
             this.buttonFormInfraccion.TabIndex = 3;
@@ -78,7 +80,7 @@
             this.buttonFormInfracciones.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.buttonFormInfracciones.FlatAppearance.BorderSize = 0;
             this.buttonFormInfracciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonFormInfracciones.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFormInfracciones.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFormInfracciones.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonFormInfracciones.Location = new System.Drawing.Point(0, 255);
             this.buttonFormInfracciones.Name = "buttonFormInfracciones";
@@ -93,9 +95,9 @@
             this.buttonFormRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonFormRegistrarPago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFormRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonFormRegistrarPago.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonFormRegistrarPago.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFormRegistrarPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonFormRegistrarPago.Location = new System.Drawing.Point(0, 460);
+            this.buttonFormRegistrarPago.Location = new System.Drawing.Point(0, 459);
             this.buttonFormRegistrarPago.Name = "buttonFormRegistrarPago";
             this.buttonFormRegistrarPago.Size = new System.Drawing.Size(209, 45);
             this.buttonFormRegistrarPago.TabIndex = 5;
@@ -108,9 +110,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.panel1.Controls.Add(this.buttonRegistrarVehiculo);
             this.panel1.Controls.Add(this.buttonRegistrarUsuario);
-            this.panel1.Controls.Add(this.buttonEliminarInfraccion);
             this.panel1.Controls.Add(this.buttonCerrarSesion);
-            this.panel1.Controls.Add(this.buttonRegistrarInfraccion);
             this.panel1.Controls.Add(this.buttonFormRegistrarPago);
             this.panel1.Controls.Add(this.buttonFormInfracciones);
             this.panel1.Controls.Add(this.buttonFormInfraccion);
@@ -124,9 +124,9 @@
             this.buttonRegistrarVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRegistrarVehiculo.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonRegistrarVehiculo.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarVehiculo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegistrarVehiculo.Location = new System.Drawing.Point(0, 407);
+            this.buttonRegistrarVehiculo.Location = new System.Drawing.Point(0, 408);
             this.buttonRegistrarVehiculo.Name = "buttonRegistrarVehiculo";
             this.buttonRegistrarVehiculo.Size = new System.Drawing.Size(209, 45);
             this.buttonRegistrarVehiculo.TabIndex = 12;
@@ -139,9 +139,9 @@
             this.buttonRegistrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonRegistrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegistrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRegistrarUsuario.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonRegistrarUsuario.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegistrarUsuario.Location = new System.Drawing.Point(3, 353);
+            this.buttonRegistrarUsuario.Location = new System.Drawing.Point(0, 352);
             this.buttonRegistrarUsuario.Name = "buttonRegistrarUsuario";
             this.buttonRegistrarUsuario.Size = new System.Drawing.Size(209, 45);
             this.buttonRegistrarUsuario.TabIndex = 11;
@@ -156,15 +156,14 @@
             this.buttonEliminarInfraccion.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.buttonEliminarInfraccion.FlatAppearance.BorderSize = 0;
             this.buttonEliminarInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEliminarInfraccion.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminarInfraccion.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEliminarInfraccion.Location = new System.Drawing.Point(107, 303);
+            this.buttonEliminarInfraccion.Location = new System.Drawing.Point(104, 0);
             this.buttonEliminarInfraccion.Name = "buttonEliminarInfraccion";
             this.buttonEliminarInfraccion.Size = new System.Drawing.Size(102, 36);
             this.buttonEliminarInfraccion.TabIndex = 9;
             this.buttonEliminarInfraccion.Text = "Eliminar";
             this.buttonEliminarInfraccion.UseVisualStyleBackColor = false;
-            this.buttonEliminarInfraccion.Visible = false;
             this.buttonEliminarInfraccion.Click += new System.EventHandler(this.buttonEliminarInfraccion_Click);
             // 
             // buttonCerrarSesion
@@ -172,7 +171,7 @@
             this.buttonCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.buttonCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCerrarSesion.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonCerrarSesion.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 512);
             this.buttonCerrarSesion.Name = "buttonCerrarSesion";
@@ -189,15 +188,14 @@
             this.buttonRegistrarInfraccion.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.buttonRegistrarInfraccion.FlatAppearance.BorderSize = 0;
             this.buttonRegistrarInfraccion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRegistrarInfraccion.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegistrarInfraccion.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarInfraccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegistrarInfraccion.Location = new System.Drawing.Point(0, 303);
+            this.buttonRegistrarInfraccion.Location = new System.Drawing.Point(3, 0);
             this.buttonRegistrarInfraccion.Name = "buttonRegistrarInfraccion";
             this.buttonRegistrarInfraccion.Size = new System.Drawing.Size(96, 36);
             this.buttonRegistrarInfraccion.TabIndex = 8;
             this.buttonRegistrarInfraccion.Text = "Registrar";
             this.buttonRegistrarInfraccion.UseVisualStyleBackColor = false;
-            this.buttonRegistrarInfraccion.Visible = false;
             this.buttonRegistrarInfraccion.Click += new System.EventHandler(this.buttonRegistrarInfraccion_Click);
             // 
             // panelContenedor
@@ -208,12 +206,22 @@
             this.panelContenedor.Size = new System.Drawing.Size(402, 506);
             this.panelContenedor.TabIndex = 7;
             // 
+            // panelSubMenuInfracciones
+            // 
+            this.panelSubMenuInfracciones.Controls.Add(this.buttonEliminarInfraccion);
+            this.panelSubMenuInfracciones.Controls.Add(this.buttonRegistrarInfraccion);
+            this.panelSubMenuInfracciones.Location = new System.Drawing.Point(1, 303);
+            this.panelSubMenuInfracciones.Name = "panelSubMenuInfracciones";
+            this.panelSubMenuInfracciones.Size = new System.Drawing.Size(209, 46);
+            this.panelSubMenuInfracciones.TabIndex = 13;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(614, 561);
+            this.Controls.Add(this.panelSubMenuInfracciones);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelBienvenida);
@@ -221,6 +229,7 @@
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.panel1.ResumeLayout(false);
+            this.panelSubMenuInfracciones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +249,6 @@
         private System.Windows.Forms.Button buttonRegistrarInfraccion;
         private System.Windows.Forms.Button buttonRegistrarVehiculo;
         private System.Windows.Forms.Button buttonRegistrarUsuario;
+        private System.Windows.Forms.Panel panelSubMenuInfracciones;
     }
 }

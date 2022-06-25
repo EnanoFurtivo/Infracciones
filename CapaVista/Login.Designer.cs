@@ -50,37 +50,41 @@ namespace CapaVista
             // 
             // textBoxDni
             // 
+            this.textBoxDni.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDni.Location = new System.Drawing.Point(156, 230);
             this.textBoxDni.Name = "textBoxDni";
-            this.textBoxDni.Size = new System.Drawing.Size(187, 20);
+            this.textBoxDni.Size = new System.Drawing.Size(187, 26);
             this.textBoxDni.TabIndex = 1;
             // 
             // textBoxClave
             // 
+            this.textBoxClave.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxClave.Location = new System.Drawing.Point(156, 292);
             this.textBoxClave.Name = "textBoxClave";
             this.textBoxClave.PasswordChar = '*';
-            this.textBoxClave.Size = new System.Drawing.Size(187, 20);
+            this.textBoxClave.Size = new System.Drawing.Size(187, 26);
             this.textBoxClave.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(153, 214);
+            this.label2.Location = new System.Drawing.Point(153, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.Size = new System.Drawing.Size(29, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Dni";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(153, 276);
+            this.label3.Location = new System.Drawing.Point(153, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Clave";
             // 
@@ -88,6 +92,7 @@ namespace CapaVista
             // 
             this.buttonAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAcceder.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAcceder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonAcceder.Location = new System.Drawing.Point(156, 370);
             this.buttonAcceder.Name = "buttonAcceder";

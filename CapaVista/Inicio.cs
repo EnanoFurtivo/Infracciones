@@ -16,10 +16,15 @@ namespace CapaVista
         public Inicio(Administrador adm)
         {
             InitializeComponent();
+            panelSubMenuInfracciones.Visible = false;
+            buttonRegistrarUsuario.Location = new Point(0, 317);
+            buttonRegistrarVehiculo.Location = new Point(0, 377);
+            buttonFormRegistrarPago.Location = new Point(0, 437);
+            buttonCerrarSesion.Location = new Point(0, 499);
+
             Administrador Admin = adm;
             this.labelBienvenida.Text = "Bienvenido/a de nuevo, " + Admin.Nombre.ToString();
         }
-
         private void AbrirForm(object form)
         {
             if (this.panelContenedor.Controls.Count > 0)
@@ -46,8 +51,22 @@ namespace CapaVista
 
         private void buttonFormRegistroInfraccion_Click(object sender, EventArgs e)
         {
-            this.buttonEliminarInfraccion.Visible = true;
-            this.buttonRegistrarInfraccion.Visible = true;
+            if (panelSubMenuInfracciones.Visible == true)
+            {
+                panelSubMenuInfracciones.Visible = false;
+                buttonRegistrarUsuario.Location = new Point(0, 317);
+                buttonRegistrarVehiculo.Location = new Point(0, 377);
+                buttonFormRegistrarPago.Location = new Point(0, 437);
+                buttonCerrarSesion.Location = new Point(0, 499);
+            }
+            else
+            {
+                panelSubMenuInfracciones.Visible = true;
+                buttonRegistrarUsuario.Location = new Point(0, 352);
+                buttonRegistrarVehiculo.Location = new Point(0, 407);
+                buttonFormRegistrarPago.Location = new Point(0, 459);
+                buttonCerrarSesion.Location = new Point(0, 512);
+            }
         }
 
         private void buttonFormRegistrarPago_Click(object sender, EventArgs e)
