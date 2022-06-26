@@ -12,7 +12,7 @@ namespace CapaDatos
     public static class DatosBD
     {
         private static string ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=";
-        private static string DBFileName = "Infracciones.accdb";
+        private static string DBFileName = "InfraccionesV2.0.accdb";
 
         private static OleDbConnection Con;
         private static OleDbCommand Cmd;
@@ -65,14 +65,14 @@ namespace CapaDatos
             Ds = new DataSet();
             Da.Fill(Ds);
 
-            foreach (DataColumn columna in Ds.Tables[0].Columns)
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            foreach (DataRow fila in Ds.Tables[0].Rows)
             {
-                foreach (DataRow fila in Ds.Tables[0].Rows)
-                {
-                    Dictionary<string, string> dict = new Dictionary<string, string>();
+                foreach (DataColumn columna in Ds.Tables[0].Columns)
                     dict[columna.ColumnName] = fila.ItemArray[columna.Ordinal].ToString();
-                    datos.Add(dict);
-                }
+                
+                datos.Add(dict);
             }
 
             Con.Close();

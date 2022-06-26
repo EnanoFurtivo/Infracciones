@@ -25,7 +25,8 @@ namespace CapaNegocio
                 int codigo = int.Parse(datosTipoInfraccion["codigo"]);
                 string descripcion = datosTipoInfraccion["descripcion"];
                 double importe = double.Parse(datosTipoInfraccion["importe"]);
-                char tipo = char.Parse(datosTipoInfraccion["tipo"]);
+                string tipoStr = datosTipoInfraccion["tipo"];
+                char tipo = tipoStr[0];
                 tiposInfraccion.Add(new TipoInfraccion(codigo, descripcion, importe, tipo));
             }
 
