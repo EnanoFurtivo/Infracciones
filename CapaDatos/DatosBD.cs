@@ -53,17 +53,9 @@ namespace CapaDatos
                 foreach(KeyValuePair<string, object> condicion in condiciones)
                 {
                     query += (i != 0) ? (operadores[i - 1] + " ") : "";
-                    query += condicion.Key + " = ";
-                    query += (typeof(string) == condicion.Value.GetType()) ? "'" : "";
-                    query += condicion.Value;
-                    query += (typeof(string) == condicion.Value.GetType()) ? "'" : "";
+                    query += condicion.Key + " = " + EscapeValue(condicion.Value);
                     i++;
                 }
-              /*  for (int i = 0; i < condiciones.Count; i++)
-                {
-                    query += (i != 0) ? (operadores[i-1]+" ") : "";
-                    query += condiciones.get + " = '" + condiciones[i,1] + "'";
-                }*/
             }
 
             Console.WriteLine(query);
@@ -98,18 +90,27 @@ namespace CapaDatos
 
             if (columnas != null)
             {
+                int i = 0;
+
                 query += "(";
-                for (int i = 0; i < columnas.GetLength(0); i++)
+
+                foreach (KeyValuePair<string, object> columna in columnas)
                 {
                     query += (i != 0) ? ", " : "";
-                    query += columnas[i,0];
+                    query += columna.Key;
+                    i++;
                 }
+
                 query += ") VALUES(";
-                for (int i = 0; i < columnas.GetLength(0); i++)
+
+                i = 0;
+                foreach (KeyValuePair<string, object> columna in columnas)
                 {
                     query += (i != 0) ? ", " : "";
-                    query += columnas[i, 1];
+                    query += EscapeValue(columna.Value);
+                    i++;
                 }
+
                 query += ")";
             }
 
@@ -126,23 +127,28 @@ namespace CapaDatos
         }
         public static void Actualizar(string tabla, Dictionary<string, object> columnas, Dictionary<string, object> condiciones = null, string[] operadores = null)
         {
-            string query = "UPDATE " + tabla;
+            string query = "UPDATE " + tabla + " SET ";
 
-            query += " SET ";
-            for (int i = 0; i < columnas.GetLength(0); i++)
+            int i = 0;
+            foreach (KeyValuePair<string, object> columna in columnas)
             {
                 query += (i != 0) ? ", " : "";
-                query += columnas[i,0] + " = " + columnas[i,1];
+                query += columna.Key + " = " + EscapeValue(columna.Value);
+                i++;
             }
 
             if (condiciones != null)
             {
                 query += " WHERE ";
-                for (int i = 0; i < condiciones.GetLength(0); i++)
+
+                i = 0;
+                foreach (KeyValuePair<string, object> condicion in condiciones)
                 {
                     query += (i != 0) ? (operadores[i - 1] + " ") : "";
-                    query += condiciones[i, 0] + " = " + condiciones[i, 1];
+                    query += condicion.Key + " = " + EscapeValue(condicion.Value);
+                    i++;
                 }
+
             }
 
             Console.WriteLine(query);
@@ -163,11 +169,15 @@ namespace CapaDatos
             if (condiciones != null)
             {
                 query += " WHERE ";
-                for (int i = 0; i < condiciones.GetLength(0); i++)
+
+                int i = 0;
+                foreach (KeyValuePair<string, object> condicion in condiciones)
                 {
                     query += (i != 0) ? (operadores[i - 1] + " ") : "";
-                    query += condiciones[i, 0] + " = " + condiciones[i, 1];
+                    query += condicion.Key + " = " + EscapeValue(condicion.Value);
+                    i++;
                 }
+
             }
 
             Console.WriteLine(query);
@@ -180,6 +190,22 @@ namespace CapaDatos
 
             Con.Close();
             Cmd.Dispose();
+        }
+
+        private static string EscapeValue(object value)
+        {
+            Type type = value.GetType();
+            string result = "";
+
+            if (type == typeof(string))
+                result = "'" + (string)value + "'";
+            else if (type == typeof(DateTime))
+            {
+                DateTime dt = (DateTime)value;
+                result = "#" + dt.Month.ToString() + "/" + dt.Day.ToString() + "/" + dt.Year.ToString() + "#";
+            }
+            
+            return result;
         }
     }
 }
