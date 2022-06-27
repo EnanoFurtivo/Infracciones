@@ -18,7 +18,7 @@ namespace CapaNegocio
             List<Dictionary<string, string>> datosVehiculos = DatosBD.Recuperar(
                 "vehiculo",                                 //FROM vehiculo
                 new string[]  {"dominio","marca"},          //SELECT dominio, marca
-                new string[,] {{"duenio",Dni.ToString()}}   //WHERE duenio = Dni
+                new Dictionary<string, object> {{"duenio",Dni}}   //WHERE duenio = Dni
                 );
 
             foreach (Dictionary<string, string> datosUsuario in datosVehiculos)

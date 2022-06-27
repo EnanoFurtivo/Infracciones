@@ -69,13 +69,16 @@ namespace CapaVista
             if (!ValidarClave(clave))
                 return;
 
-          /*  if (Usuario.ValidarCredenciales(dni, clave, typeof(Administrador)))
+            if (Usuario.ValidarCredenciales(dni, clave, typeof(Administrador)))
             {
-                Inicio form = new Inicio((Administrador)Usuario.GetUsuario(dni));
-                form.ShowDialog();
+                Inicio form = new Inicio((Administrador)Usuario.GetUsuario(dni), this);
+                textBoxDni.Text = string.Empty;
+                textBoxClave.Text = string.Empty;
+                form.Show();
+                this.Hide();
             }
             else
-                MessageBox.Show("El dni o clave ingresada es incorrecta", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
+                MessageBox.Show("El dni o clave ingresada es incorrecta", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

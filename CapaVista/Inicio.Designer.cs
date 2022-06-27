@@ -36,8 +36,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonRegistrarVehiculo = new System.Windows.Forms.Button();
             this.buttonRegistrarUsuario = new System.Windows.Forms.Button();
-            this.buttonEliminarInfraccion = new System.Windows.Forms.Button();
             this.buttonCerrarSesion = new System.Windows.Forms.Button();
+            this.buttonEliminarInfraccion = new System.Windows.Forms.Button();
             this.buttonRegistrarInfraccion = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelSubMenuInfracciones = new System.Windows.Forms.Panel();
@@ -149,6 +149,21 @@
             this.buttonRegistrarUsuario.UseVisualStyleBackColor = false;
             this.buttonRegistrarUsuario.Click += new System.EventHandler(this.buttonRegistrarUsuario_Click);
             // 
+            // buttonCerrarSesion
+            // 
+            this.buttonCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
+            this.buttonCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCerrarSesion.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 512);
+            this.buttonCerrarSesion.Name = "buttonCerrarSesion";
+            this.buttonCerrarSesion.Size = new System.Drawing.Size(209, 45);
+            this.buttonCerrarSesion.TabIndex = 7;
+            this.buttonCerrarSesion.Text = "Cerrar Sesion";
+            this.buttonCerrarSesion.UseVisualStyleBackColor = false;
+            this.buttonCerrarSesion.Click += new System.EventHandler(this.buttonCerrarSesion_Click);
+            // 
             // buttonEliminarInfraccion
             // 
             this.buttonEliminarInfraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
@@ -165,21 +180,6 @@
             this.buttonEliminarInfraccion.Text = "Eliminar";
             this.buttonEliminarInfraccion.UseVisualStyleBackColor = false;
             this.buttonEliminarInfraccion.Click += new System.EventHandler(this.buttonEliminarInfraccion_Click);
-            // 
-            // buttonCerrarSesion
-            // 
-            this.buttonCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(60)))), ((int)(((byte)(85)))));
-            this.buttonCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCerrarSesion.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 512);
-            this.buttonCerrarSesion.Name = "buttonCerrarSesion";
-            this.buttonCerrarSesion.Size = new System.Drawing.Size(209, 45);
-            this.buttonCerrarSesion.TabIndex = 7;
-            this.buttonCerrarSesion.Text = "Cerrar Sesion";
-            this.buttonCerrarSesion.UseVisualStyleBackColor = false;
-            this.buttonCerrarSesion.Click += new System.EventHandler(this.buttonCerrarSesion_Click);
             // 
             // buttonRegistrarInfraccion
             // 
@@ -228,6 +228,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panelSubMenuInfracciones.ResumeLayout(false);
             this.ResumeLayout(false);

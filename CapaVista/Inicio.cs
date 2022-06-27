@@ -13,9 +13,12 @@ namespace CapaVista
 {
     public partial class Inicio : Form
     {
-        public Inicio(Administrador adm)
+        bool salir = true;
+        Login login;
+        public Inicio(Administrador adm, Login log)
         {
             InitializeComponent();
+            login = log;
             panelSubMenuInfracciones.Visible = false;
             buttonRegistrarUsuario.Location = new Point(0, 317);
             buttonRegistrarVehiculo.Location = new Point(0, 377);
@@ -45,8 +48,9 @@ namespace CapaVista
 
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
-            Login frm = new Login();
-            frm.ShowDialog();
+            salir = false;
+            login.Show();
+            this.Close();
         }
 
         private void buttonFormRegistroInfraccion_Click(object sender, EventArgs e)
@@ -77,15 +81,11 @@ namespace CapaVista
         private void buttonRegistrarInfraccion_Click(object sender, EventArgs e)
         {
             AbrirForm(new RegistroInfraccion());
-            this.buttonEliminarInfraccion.Visible = false;
-            this.buttonRegistrarInfraccion.Visible = false;
         }
 
         private void buttonEliminarInfraccion_Click(object sender, EventArgs e)
         {
             AbrirForm(new EliminarInfraccion());
-            this.buttonEliminarInfraccion.Visible = false;
-            this.buttonRegistrarInfraccion.Visible = false;
         }
 
         private void buttonRegistrarUsuario_Click(object sender, EventArgs e)
@@ -96,6 +96,14 @@ namespace CapaVista
         private void buttonRegistrarVehiculo_Click(object sender, EventArgs e)
         {
             AbrirForm(new RegistrarVehiculo());
+        }
+
+        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(salir)
+                Application.Exit();
+
+            salir = true;
         }
     }
 }
