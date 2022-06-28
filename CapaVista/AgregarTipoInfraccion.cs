@@ -17,12 +17,10 @@ namespace CapaVista
         {
             InitializeComponent();
 
-            string grave = "Grave";
-            string leve = "Leve";
+            List<string> listaTipo = new List<string>() { "Grave", "Leve" };
 
             comboBoxTipo.DataSource = null;
-            comboBoxTipo.Items[0] = grave;
-            comboBoxTipo.Items[1] = leve;
+            comboBoxTipo.DataSource = listaTipo;
         }
 
         private void buttonAgregarTipoInfraccion_Click(object sender, EventArgs e)
@@ -34,12 +32,16 @@ namespace CapaVista
             string importeStr = textBoxImporte.Text;
             double importe;
             if (!ValidarImporte(importeStr, out importe))
-                return;
-
-            char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
+                return;;
 
             if (comboBoxTipo.SelectedItem != null)
-                ;//TipoInfraccion.Registrar(descripcion, importe, tipo);
+            {
+                string tipoStr = comboBoxTipo.SelectedItem.ToString();
+                char tipo = tipoStr[0];
+
+                TipoInfraccion tipoInfraccion = new TipoInfraccion(descripcion, importe, tipo);
+                tipoInfraccion.Registrar();
+            }
             
             this.Close();
         }

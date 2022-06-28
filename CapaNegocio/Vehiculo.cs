@@ -33,7 +33,7 @@ namespace CapaNegocio
 
             List<Dictionary<string, string>> datosInfracciones = DatosBD.Recuperar(
                 "infraccion",                                                       //FROM infraccion
-                new string[]  {"numInfraccion","fechaInfraccion","tipoInfraccion"}, //SELECT numInfraccion, fechaInfraccion, tipoInfraccion
+                new string[]  {"numInfraccion","fechaInfraccion","fechaVencimiento", "fechaPago", "tipoInfraccion", "importeBase", "montoInfraccion" }, //SELECT numInfraccion, fechaInfraccion, tipoInfraccion...
                 new Dictionary<string, object> {{"vehiculo",Dominio}}                                //WHERE vehiculo = <Dominio>                                 
                 );
 
@@ -41,10 +41,14 @@ namespace CapaNegocio
             {
                 int numInfraccion = int.Parse(datosInfraccion["numInfraccion"]);
                 DateTime fechaInfraccion = DateTime.Parse(datosInfraccion["fechaInfraccion"]);
+                DateTime fechaVencimiento = DateTime.Parse(datosInfraccion["fechaVencimiento"]);
+                DateTime fechaPago = DateTime.Parse(datosInfraccion["fechaPago"]);
                 int nroTipoInfraccion = int.Parse(datosInfraccion["tipoInfraccion"]);
                 TipoInfraccion tipoInfraccion = TipoInfraccion.GetTipoInfraccion(nroTipoInfraccion);
+                double importeBase = double.Parse(datosInfraccion["importeBase"]);
+                double montoInfraccion = double.Parse(datosInfraccion["montoInfraccion"]);
 
-                Infraccion infraccion = new Infraccion(numInfraccion, fechaInfraccion, tipoInfraccion, this);
+                Infraccion infraccion = new Infraccion(numInfraccion, fechaInfraccion, fechaVencimiento, fechaPago, tipoInfraccion, this, importeBase, montoInfraccion);
                 
                 infracciones.Add(infraccion);
             }
@@ -100,7 +104,7 @@ namespace CapaNegocio
         {
             DatosBD.Registrar(
                 "vehiculo",
-                new string[,] {{"dominio",Dominio},{"marca",Marca},{"duenio",Duenio.Dni.ToString()}}
+                new Dictionary<string, object> {{"dominio",Dominio},{"marca",Marca},{"duenio",Duenio.Dni}}
                 );
         }
         public void Actualizar()

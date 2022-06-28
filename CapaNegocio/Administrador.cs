@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDatos;
 
 namespace CapaNegocio
 {
@@ -22,7 +23,10 @@ namespace CapaNegocio
         }
         public override void Registrar()
         {
-            throw new NotImplementedException();
+            DatosBD.Registrar(
+                "usuario",
+                new Dictionary<string, object> { { "dni", Dni }, { "clave", Clave }, { "nombre", Nombre }, { "discriminador", "Duenio" } }
+                );
         }
     }
 }

@@ -43,7 +43,10 @@ namespace CapaNegocio
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
         public override void Registrar()
         {
-            throw new NotImplementedException();
+            DatosBD.Registrar(
+                "usuario",
+                new Dictionary<string, object> { { "dni", Dni }, { "clave", Clave }, { "nombre", Nombre }, { "discriminador", "Duenio" } }
+                );
         }
         public override void Actualizar()
         {
