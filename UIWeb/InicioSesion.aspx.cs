@@ -5,22 +5,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaControl;
 using CapaNegocio;
 
 namespace UIWeb
 {
     public partial class InicioSesion: System.Web.UI.Page
     {
-        UsuarioController Usuarios;
+        /*UsuarioController Usuarios;
         ActividadController Actividades;
-        static string LugarBase;
+        static string LugarBase;*/
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Redirect("Inicio.aspx");
+
             if (!IsPostBack)
             {
-                recuperar();
+                /*recuperar();
 
                 if(LugarBase == null)
                 {
@@ -46,17 +47,19 @@ namespace UIWeb
 
                     Session["ucontrol"] = Usuarios;
                     Session["acontrol"] = Actividades;
-                }
+                }*/
             }
         }
         public void recuperar()
         {
-            Usuarios = (UsuarioController)Session["ucontrol"];
-            Actividades = (ActividadController)Session["acontrol"];
+            /*Usuarios = (UsuarioController)Session["ucontrol"];
+            Actividades = (ActividadController)Session["acontrol"];*/
         }
         private bool ValidarDni(string dniStr, out int dni)
         {
-            if (dniStr == "")
+            dni = 0;
+            return false;
+            /*if (dniStr == "")
             {
                 LabelDeError.Text = "    Se esperaba un dni";
                 dni = -1;
@@ -70,21 +73,22 @@ namespace UIWeb
                 return false;
             }
 
-            return true;
+            return true;*/
         }
         private bool ValidarClave(string clave)
         {
-            if (clave == "")
+            return false;
+            /*if (clave == "")
             {
                 LabelDeError.Text = "    Se esperaba una clave";
                 return false;
             }
 
-            return true;
+            return true;*/
         }
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
-            recuperar();
+            /*recuperar();
 
             string dniStr = this.TxtBoxDni.Text;
             int dni;
@@ -107,7 +111,7 @@ namespace UIWeb
                 this.LabelDeError.Text = "    El dni o clave ingresada es incorrecta";
                 TxtBoxDni.Text = string.Empty;
                 TxtBoxClave.Text = string.Empty;
-            }
+            }*/
         }
     }
 }

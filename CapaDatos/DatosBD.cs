@@ -191,6 +191,27 @@ namespace CapaDatos
             Con.Close();
             Cmd.Dispose();
         }
+        public static int GetUltimoId(string tabla, string columna)
+        {
+            string query = "SELECT MAX(" + columna + ") FROM " + tabla;
+
+            Con = new OleDbConnection(ConnectionString);
+            Con.Open();
+
+            Da = new OleDbDataAdapter(query, Con);
+            Ds = new DataSet();
+            Da.Fill(Ds);
+
+            DataRow filaDS = Ds.Tables[0].Rows[0];
+            DataColumn columnaDS = Ds.Tables[0].Columns[columna];
+            int id = int.Parse(Ds.Tables[0].Rows[0].ItemArray[columnaDS.Ordinal].ToString());
+
+            Con.Close();
+            Ds.Dispose();
+            Da.Dispose();
+
+            return id;
+        }
 
         private static string EscapeValue(object value)
         {

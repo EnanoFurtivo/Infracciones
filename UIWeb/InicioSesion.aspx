@@ -6,31 +6,14 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 310px;
-        }
-        .auto-style2 {
-            height: 31px;
-        }
-        .auto-style3 {
-            height: 31px;
-            width: 497px;
-        }
-        .auto-style4 {
-            width: 497px;
-        }
-        .auto-style5 {
-            height: 31px;
-            width: 252px;
-        }
-        .auto-style6 {
-            width: 252px;
-        }
-        .auto-style8 {
-            margin-top: 30px;
-        }
-    </style>
+
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-utilities.css"/>
+    <link rel="stylesheet" href="bootstrap/icons/bootstrap-icons.css"/>
+
+    <style type="text/css"></style>
 </head>
 <body style="height: 307px">
     <form id="form1" runat="server" class="auto-style1">
@@ -43,7 +26,7 @@
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4"></td>
                     <td class="auto-style6">Dni<asp:TextBox ID="TxtBoxDni" runat="server" style="margin-left: 32px; " CssClass="auto-style8"></asp:TextBox>
                         <br />
             Clave<asp:TextBox ID="TxtBoxClave" runat="server" style="margin-left: 18px; margin-top: 45px;" TextMode="Password"></asp:TextBox>

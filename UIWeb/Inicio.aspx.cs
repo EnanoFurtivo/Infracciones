@@ -5,22 +5,21 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaControl;
 using CapaNegocio;
 
 namespace UIWeb
 {
     public partial class Inicio : System.Web.UI.Page
     {
-        UsuarioController Usuarios;
+        /*UsuarioController Usuarios;
         ActividadController Actividades;
-        Socio socioLogueado;
+        Socio socioLogueado;*/
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                recuperar();
+              /*  recuperar();
                 refrescarLista(Actividades.MostrarLista(), ListBoxActividades);
 
                 if (socioLogueado != null)
@@ -34,23 +33,23 @@ namespace UIWeb
                     Label1.Text = saldoStr + "$" + saldo.ToString();
                 }
 
-                this.LabelBienvenida.Text = "Bienvenido/a de nuevo " + ((Usuario)socioLogueado).Nombre;
+                this.LabelBienvenida.Text = "Bienvenido/a de nuevo " + ((Usuario)socioLogueado).Nombre;*/
             }
         }
         public void recuperar()
         {
-            Usuarios = (UsuarioController)Session["ucontrol"];
+            /*Usuarios = (UsuarioController)Session["ucontrol"];
             Actividades = (ActividadController)Session["acontrol"];
-            socioLogueado = (Socio)Session["socio"];
+            socioLogueado = (Socio)Session["socio"];*/
         }
-        public void refrescarLista(List<Actividad> actividades, ListBox listBox)
+        public void refrescarLista(/*List<Actividad> actividades, ListBox listBox*/)
         {
-            listBox.Items.Clear();
+            /*listBox.Items.Clear();
             recuperar();
             for(int i=0;i<actividades.Count; i++)
-                listBox.Items.Add(actividades[i].ToString());
+                listBox.Items.Add(actividades[i].ToString());*/
         }
-        public void refrescarLista(List<RegistroActividad> actividades, ListBox listBox)
+        /*public void refrescarLista(List<RegistroActividad> actividades, ListBox listBox)
         {
             listBox.Items.Clear();
             recuperar();
@@ -59,10 +58,10 @@ namespace UIWeb
                 for (int i = 0; i < actividades.Count; i++)
                     listBox.Items.Add(actividades[i].ToString());
             }
-        }
+        }*/
         protected void ButtonInscribirse_Click(object sender, EventArgs e)
         {
-            recuperar();
+            /*recuperar();
 
             if(ListBoxActividades.SelectedIndex > -1 && !socioLogueado.ActividadRepetida(Actividades.GetActividadPorIndex(ListBoxActividades.SelectedIndex)))
             {
@@ -77,12 +76,12 @@ namespace UIWeb
                 ListBoxInscriptas.ClearSelection();
                 refrescarLista(socioLogueado.GetActividades(), ListBoxInscriptas);
                 Label2.Text = "    Ya estas inscripto en esta actividad";
-            }
+            }*/
 
         }
         protected void ButtonDesasignar_Click(object sender, EventArgs e)
         {
-            recuperar();
+            /*recuperar();
 
             if (ListBoxInscriptas.SelectedIndex > -1)
             {
@@ -92,12 +91,12 @@ namespace UIWeb
                 refrescarLista(socioLogueado.GetActividades(), ListBoxInscriptas);
                 Label2.Text = "    Baja de actividad realizada";
 
-            }
+            }*/
         }
 
         protected void ButCerrarSesion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("InicioSesion.aspx");
+            /*Response.Redirect("InicioSesion.aspx");*/
         }
     }
 }

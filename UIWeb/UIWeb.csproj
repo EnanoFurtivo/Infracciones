@@ -46,6 +46,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -98,17 +104,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaControl\CapaControl.csproj">
-      <Project>{23d2ee3d-2912-464a-9b6c-07061c0af31f}</Project>
-      <Name>CapaControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
       <Project>{4fc787f1-8d96-412d-8d4f-863123c1c7cf}</Project>
       <Name>CapaNegocio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RN\RN.csproj">
-      <Project>{f781362a-ea2f-4a54-b48d-03231f6ae46a}</Project>
-      <Name>RN</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
