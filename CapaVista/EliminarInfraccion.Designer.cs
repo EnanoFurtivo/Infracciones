@@ -38,21 +38,21 @@
             this.listBoxInfraccion.BackColor = System.Drawing.Color.MintCream;
             this.listBoxInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxInfraccion.FormattingEnabled = true;
+            this.listBoxInfraccion.HorizontalScrollbar = true;
             this.listBoxInfraccion.ItemHeight = 18;
-            this.listBoxInfraccion.Location = new System.Drawing.Point(86, 56);
+            this.listBoxInfraccion.Location = new System.Drawing.Point(28, 56);
             this.listBoxInfraccion.Name = "listBoxInfraccion";
-            this.listBoxInfraccion.Size = new System.Drawing.Size(230, 328);
+            this.listBoxInfraccion.Size = new System.Drawing.Size(340, 328);
             this.listBoxInfraccion.TabIndex = 1;
-            this.listBoxInfraccion.SelectedIndexChanged += new System.EventHandler(this.listBoxInfraccion_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(82, 33);
+            this.label1.Location = new System.Drawing.Point(149, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 18);
+            this.label1.Size = new System.Drawing.Size(88, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Infracciones";
             // 
@@ -69,6 +69,7 @@
             this.buttonEliminarInfraccion.TabIndex = 5;
             this.buttonEliminarInfraccion.Text = "Eliminar Infraccion";
             this.buttonEliminarInfraccion.UseVisualStyleBackColor = false;
+            this.buttonEliminarInfraccion.Click += new System.EventHandler(this.buttonEliminarInfraccion_Click);
             // 
             // EliminarInfraccion
             // 

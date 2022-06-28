@@ -40,26 +40,26 @@
             // 
             this.comboBoxTipoInfraccion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTipoInfraccion.FormattingEnabled = true;
-            this.comboBoxTipoInfraccion.Location = new System.Drawing.Point(108, 129);
+            this.comboBoxTipoInfraccion.Location = new System.Drawing.Point(64, 134);
             this.comboBoxTipoInfraccion.Name = "comboBoxTipoInfraccion";
-            this.comboBoxTipoInfraccion.Size = new System.Drawing.Size(186, 23);
+            this.comboBoxTipoInfraccion.Size = new System.Drawing.Size(266, 23);
             this.comboBoxTipoInfraccion.TabIndex = 0;
             this.comboBoxTipoInfraccion.Text = "Seleccione un tipo de infraccion";
             // 
             // dateTimePickerFechaInfraccion
             // 
-            this.dateTimePickerFechaInfraccion.Location = new System.Drawing.Point(108, 292);
+            this.dateTimePickerFechaInfraccion.Location = new System.Drawing.Point(64, 292);
             this.dateTimePickerFechaInfraccion.Name = "dateTimePickerFechaInfraccion";
-            this.dateTimePickerFechaInfraccion.Size = new System.Drawing.Size(186, 20);
+            this.dateTimePickerFechaInfraccion.Size = new System.Drawing.Size(266, 20);
             this.dateTimePickerFechaInfraccion.TabIndex = 1;
             // 
             // comboBoxVehiculo
             // 
             this.comboBoxVehiculo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVehiculo.FormattingEnabled = true;
-            this.comboBoxVehiculo.Location = new System.Drawing.Point(108, 206);
+            this.comboBoxVehiculo.Location = new System.Drawing.Point(64, 207);
             this.comboBoxVehiculo.Name = "comboBoxVehiculo";
-            this.comboBoxVehiculo.Size = new System.Drawing.Size(186, 23);
+            this.comboBoxVehiculo.Size = new System.Drawing.Size(266, 23);
             this.comboBoxVehiculo.TabIndex = 2;
             this.comboBoxVehiculo.Text = "Seleccione un Vehiculo";
             // 
@@ -68,7 +68,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(105, 274);
+            this.label1.Location = new System.Drawing.Point(61, 274);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 15);
             this.label1.TabIndex = 3;

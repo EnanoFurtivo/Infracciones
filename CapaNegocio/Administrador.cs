@@ -23,10 +23,7 @@ namespace CapaNegocio
         }
         public override void Registrar()
         {
-            DatosBD.Registrar(
-                "usuario",
-                new Dictionary<string, object> { { "dni", Dni }, { "clave", Clave }, { "nombre", Nombre }, { "discriminador", "Duenio" } }
-                );
+            throw new NotImplementedException();
         }
     }
 }

@@ -43,6 +43,7 @@
             this.checkedListBoxInfraccion.BackColor = System.Drawing.Color.MintCream;
             this.checkedListBoxInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxInfraccion.FormattingEnabled = true;
+            this.checkedListBoxInfraccion.HorizontalScrollbar = true;
             this.checkedListBoxInfraccion.Location = new System.Drawing.Point(223, 84);
             this.checkedListBoxInfraccion.Name = "checkedListBoxInfraccion";
             this.checkedListBoxInfraccion.Size = new System.Drawing.Size(167, 319);
@@ -64,6 +65,7 @@
             this.listBoxVehiculos.BackColor = System.Drawing.Color.MintCream;
             this.listBoxVehiculos.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxVehiculos.FormattingEnabled = true;
+            this.listBoxVehiculos.HorizontalScrollbar = true;
             this.listBoxVehiculos.ItemHeight = 18;
             this.listBoxVehiculos.Location = new System.Drawing.Point(12, 84);
             this.listBoxVehiculos.Name = "listBoxVehiculos";

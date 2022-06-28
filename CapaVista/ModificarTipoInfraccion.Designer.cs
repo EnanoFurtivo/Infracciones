@@ -115,10 +115,10 @@
             // 
             // textBoxCodigo
             // 
+            this.textBoxCodigo.Enabled = false;
             this.textBoxCodigo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCodigo.Location = new System.Drawing.Point(136, 127);
             this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.ReadOnly = true;
             this.textBoxCodigo.Size = new System.Drawing.Size(131, 26);
             this.textBoxCodigo.TabIndex = 14;
             // 

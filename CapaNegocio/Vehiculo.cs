@@ -42,7 +42,7 @@ namespace CapaNegocio
                 int numInfraccion = int.Parse(datosInfraccion["numInfraccion"]);
                 DateTime fechaInfraccion = DateTime.Parse(datosInfraccion["fechaInfraccion"]);
                 DateTime fechaVencimiento = DateTime.Parse(datosInfraccion["fechaVencimiento"]);
-                DateTime fechaPago = DateTime.Parse(datosInfraccion["fechaPago"]);
+                DateTime? fechaPago = (datosInfraccion["fechaPago"] != "") ? (DateTime?)DateTime.Parse(datosInfraccion["fechaPago"]) : null;
                 int nroTipoInfraccion = int.Parse(datosInfraccion["tipoInfraccion"]);
                 TipoInfraccion tipoInfraccion = TipoInfraccion.GetTipoInfraccion(nroTipoInfraccion);
                 double importeBase = double.Parse(datosInfraccion["importeBase"]);
@@ -97,6 +97,10 @@ namespace CapaNegocio
 
             infraccion.Eliminar();
             Infracciones.Remove(infraccion);
+        }
+        public override string ToString()
+        {
+            return Dominio + " - " + Duenio.Nombre + " - " + Marca;
         }
 
         //Persistencia de datos//

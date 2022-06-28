@@ -40,12 +40,16 @@ namespace CapaNegocio
         {
             Vehiculos = new List<Vehiculo>();
         }
+        public override string ToString()
+        {
+            return Nombre + " - " + Dni;
+        }
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
         public override void Registrar()
         {
             DatosBD.Registrar(
                 "usuario",
-                new Dictionary<string, object> { { "dni", Dni }, { "clave", Clave }, { "nombre", Nombre }, { "discriminador", "Duenio" } }
+                new Dictionary<string, object> { { "dni", Dni }, { "clave", Clave }, { "nombre", Nombre }, { "discriminador", "duenio" } }
                 );
         }
         public override void Actualizar()

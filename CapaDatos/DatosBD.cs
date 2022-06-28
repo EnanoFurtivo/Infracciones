@@ -203,7 +203,7 @@ namespace CapaDatos
             Da.Fill(Ds);
 
             DataRow filaDS = Ds.Tables[0].Rows[0];
-            DataColumn columnaDS = Ds.Tables[0].Columns[columna];
+            DataColumn columnaDS = Ds.Tables[0].Columns[0];
             int id = int.Parse(Ds.Tables[0].Rows[0].ItemArray[columnaDS.Ordinal].ToString());
 
             Con.Close();

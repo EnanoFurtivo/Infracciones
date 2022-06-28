@@ -35,7 +35,8 @@ namespace CapaVista
 
             Duenio duenio = new Duenio(dni, clave, nombre);
 
-            ;//Usuario.RegistrarUsuario(duenio);
+            duenio.Registrar();
+            MessageBox.Show("Usuario registrado con exito", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //Validar//

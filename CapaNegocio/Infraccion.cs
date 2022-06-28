@@ -17,7 +17,7 @@ namespace CapaNegocio
                 "infraccion"    //SELECT * FROM infraccion
                 );
 
-            UltimaInfraccion = datosInfracciones.Count;
+            UltimaInfraccion = DatosBD.GetUltimoId("infraccion", "numInfraccion");
         }
 
         public int NumeroInfraccion { get; internal set; }
@@ -34,12 +34,12 @@ namespace CapaNegocio
         /// Monto final al momento del pago
         /// </summary>
         public double MontoInfraccion { get { return GetMontoInfraccion(); } }
-        private double MontoInfraccionPagado = -1;
+        private double MontoInfraccionPagado = 0;
 
         /// <summary>
         /// Metodo utilizado para recuperar de la base de datos, NO IMPLEMENTAR!!
         /// </summary>
-        public Infraccion(int nroInfraccion, DateTime fechaInfraccion, DateTime fechaVencimiento, DateTime fechaPago, TipoInfraccion tipoInfraccion, Vehiculo vehiculo, double importeBase, double montoInfraccion)
+        public Infraccion(int nroInfraccion, DateTime fechaInfraccion, DateTime fechaVencimiento, DateTime? fechaPago, TipoInfraccion tipoInfraccion, Vehiculo vehiculo, double importeBase, double montoInfraccion)
         {
             FechaInfraccion = fechaInfraccion;
             FechaVencimiento = fechaVencimiento;
@@ -63,7 +63,7 @@ namespace CapaNegocio
 
         private double GetMontoInfraccion()
         {
-            if(MontoInfraccionPagado == -1)
+            if(MontoInfraccionPagado == 0)
             {
                 TimeSpan timeDiff = FechaVencimiento - DateTime.Now;
                 return TipoInfraccion.GetMontoInfraccion(timeDiff.Days, ImporteBase);
@@ -80,30 +80,41 @@ namespace CapaNegocio
         {
             return FechaPago != null;
         }
-
+        public override string ToString()
+        {
+            return FechaInfraccion.ToString(("dd/MM/yyyy")) + " - " + TipoInfraccion.Descripcion + " - " + Vehiculo.Dominio + " - " + "S" + ImporteBase;
+        }
         public void Registrar()
         {
             DatosBD.Registrar(
-                "usuario",
+                "infraccion",
                 new Dictionary<string, object> { 
                     { "numInfraccion", NumeroInfraccion }, 
                     { "fechaInfraccion", FechaInfraccion }, 
-                    { "fechaVencimiento", FechaVencimiento }, 
-                    { "fechaPago", FechaPago },
+                    { "fechaVencimiento", FechaVencimiento },
                     { "tipoInfraccion", TipoInfraccion.Codigo },
-                    { "Vehiculo", Vehiculo.Dominio },
-                    { "importeBase", TipoInfraccion.Importe },
-                    { "montoInfraccion", MontoInfraccionPagado },
+                    { "vehiculo", Vehiculo.Dominio },
+                    { "importeBase", TipoInfraccion.Importe }
                     }
                 );
         }
         public void Actualizar()
         {
-            throw new InvalidOperationException();
+            DatosBD.Actualizar(
+            "infraccion",
+            new Dictionary<string, object> {
+                { "fechaPago", FechaPago },
+                { "montoInfraccion", MontoInfraccion } 
+                },
+            new Dictionary<string, object> {
+                { "numInfraccion", NumeroInfraccion }}
+            );
         }
         public void Eliminar()
         {
-            throw new InvalidOperationException();
+            DatosBD.Eliminar(
+            "infraccion",
+            new Dictionary<string, object> {{ "numInfraccion", NumeroInfraccion }});
         }
     }
 }
