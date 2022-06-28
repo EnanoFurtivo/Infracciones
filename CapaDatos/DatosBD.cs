@@ -199,11 +199,15 @@ namespace CapaDatos
 
             if (type == typeof(string))
                 result = "'" + (string)value + "'";
+            else if (type == typeof(char))
+                result = "'" + (char)value + "'";
             else if (type == typeof(DateTime))
             {
                 DateTime dt = (DateTime)value;
                 result = "#" + dt.Month.ToString() + "/" + dt.Day.ToString() + "/" + dt.Year.ToString() + "#";
             }
+            else
+                result = value.ToString();
             
             return result;
         }
