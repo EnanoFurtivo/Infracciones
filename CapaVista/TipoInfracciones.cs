@@ -21,10 +21,8 @@ namespace CapaVista
 
         private void MostrarLista()
         {
-            listBoxTipoInfraccion.Items.Clear();
-
-            for (int i = 0; i < TipoInfraccion.TiposInfraccion.Count; i++)
-                listBoxTipoInfraccion.Items.Add(TipoInfraccion.TiposInfraccion.ToString());
+            listBoxTipoInfraccion.DataSource = null;
+            listBoxTipoInfraccion.DataSource = TipoInfraccion.TiposInfraccion;
         }
 
         private void buttonAgregarTipoInfraccion_Click(object sender, EventArgs e)
@@ -38,6 +36,7 @@ namespace CapaVista
         {
             ModificarTipoInfraccion form = new ModificarTipoInfraccion((TipoInfraccion)listBoxTipoInfraccion.SelectedItem);
             form.ShowDialog();
+            listBoxTipoInfraccion.ClearSelected();
             MostrarLista();
         }
     }

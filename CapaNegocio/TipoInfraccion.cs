@@ -31,7 +31,7 @@ namespace CapaNegocio
             }
 
             TiposInfraccion = tiposInfraccion;
-            UltimoTipoInfraccion = tiposInfraccion.Count - 1;
+            UltimoTipoInfraccion = tiposInfraccion.Count;
         }
         public static TipoInfraccion GetTipoInfraccion(int codigo)
         {
@@ -56,6 +56,7 @@ namespace CapaNegocio
             Importe = importe > 0 ? importe : throw new ArgumentOutOfRangeException(nameof(importe));
             Tipo = tipo;
             Codigo = ++UltimoTipoInfraccion;
+            TiposInfraccion.Add(this);
         }
         private TipoInfraccion(int codigo, string descripcion, double importe, char tipo)
         {
@@ -94,14 +95,44 @@ namespace CapaNegocio
                     return importeBase;
             }
         }
+        public override string ToString()
+        {
+            string tipo = null;
 
+            if (Tipo == 'L')
+                tipo = "Leve";
+            else if (Tipo == 'G')
+                tipo = "Grave";
+
+            return Descripcion + " - " + "$" + Importe + " - " + tipo;
+        }
         public void Registrar()
         {
-            throw new NotImplementedException();
+            DatosBD.Registrar(
+                "tipoInfraccion",
+                new Dictionary<string, object> { 
+                    { "codigo", Codigo }, 
+                    { "descripcion", Descripcion }, 
+                    { "importe", Importe }, 
+                    { "tipo", Tipo } }
+                );
         }
         public void Actualizar()
         {
-            throw new NotImplementedException();
+            DatosBD.Actualizar(
+                "tipoInfraccion",
+                new Dictionary<string, object>
+                {
+                    { "codigo", Codigo },
+                    { "descripcion", Descripcion },
+                    { "importe", Importe },
+                    { "tipo", Tipo } 
+                },
+                new Dictionary<string, object>
+                {
+                    { "codigo", Codigo }
+                }
+            );
         }
         public void Eliminar()
         {

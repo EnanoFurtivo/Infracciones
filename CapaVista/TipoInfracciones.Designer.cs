@@ -40,9 +40,9 @@
             this.listBoxTipoInfraccion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxTipoInfraccion.FormattingEnabled = true;
             this.listBoxTipoInfraccion.ItemHeight = 18;
-            this.listBoxTipoInfraccion.Location = new System.Drawing.Point(86, 53);
+            this.listBoxTipoInfraccion.Location = new System.Drawing.Point(29, 53);
             this.listBoxTipoInfraccion.Name = "listBoxTipoInfraccion";
-            this.listBoxTipoInfraccion.Size = new System.Drawing.Size(230, 328);
+            this.listBoxTipoInfraccion.Size = new System.Drawing.Size(344, 328);
             this.listBoxTipoInfraccion.TabIndex = 0;
             // 
             // buttonAgregarTipoInfraccion
@@ -80,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(82, 30);
+            this.label1.Location = new System.Drawing.Point(135, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 18);
             this.label1.TabIndex = 3;

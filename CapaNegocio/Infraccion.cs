@@ -17,7 +17,7 @@ namespace CapaNegocio
                 "infraccion"    //SELECT * FROM infraccion
                 );
 
-            UltimaInfraccion = datosInfracciones.Count - 1;
+            UltimaInfraccion = datosInfracciones.Count;
         }
 
         public int NumeroInfraccion { get; internal set; }
@@ -34,18 +34,20 @@ namespace CapaNegocio
         /// Monto final al momento del pago
         /// </summary>
         public double MontoInfraccion { get { return GetMontoInfraccion(); } }
+        private double MontoInfraccionPagado = -1;
 
         /// <summary>
         /// Metodo utilizado para recuperar de la base de datos, NO IMPLEMENTAR!!
         /// </summary>
-        public Infraccion(int nroInfraccion, DateTime fechaInfraccion, TipoInfraccion tipoInfraccion, Vehiculo vehiculo)
+        public Infraccion(int nroInfraccion, DateTime fechaInfraccion, DateTime fechaVencimiento, DateTime fechaPago, TipoInfraccion tipoInfraccion, Vehiculo vehiculo, double importeBase, double montoInfraccion)
         {
             FechaInfraccion = fechaInfraccion;
-            FechaVencimiento = fechaInfraccion + new TimeSpan(CantidadDiasVencimiento, 0, 0, 0);
-            FechaPago = null;
+            FechaVencimiento = fechaVencimiento;
+            FechaPago = fechaPago;
             TipoInfraccion = tipoInfraccion ?? throw new ArgumentNullException(nameof(tipoInfraccion));
             Vehiculo = vehiculo ?? throw new ArgumentNullException(nameof(vehiculo));
-            ImporteBase = tipoInfraccion.Importe; //congelar el importe cuando se crea la infraccion
+            ImporteBase = importeBase; //congelar el importe cuando se crea la infraccion
+            MontoInfraccionPagado = montoInfraccion;
             NumeroInfraccion = nroInfraccion;
         }
         public Infraccion(DateTime fechaInfraccion, TipoInfraccion tipoInfraccion, Vehiculo vehiculo)
@@ -61,12 +63,18 @@ namespace CapaNegocio
 
         private double GetMontoInfraccion()
         {
-            TimeSpan timeDiff = FechaVencimiento - DateTime.Now;
-            return TipoInfraccion.GetMontoInfraccion(timeDiff.Days, ImporteBase);
+            if(MontoInfraccionPagado == -1)
+            {
+                TimeSpan timeDiff = FechaVencimiento - DateTime.Now;
+                return TipoInfraccion.GetMontoInfraccion(timeDiff.Days, ImporteBase);
+            }
+            else
+                return MontoInfraccionPagado;
         }
         public void RegistrarPago(DateTime fechaPago)
         {
             FechaPago = !EstaPaga() ? fechaPago : throw new InvalidOperationException("ya esta registrado el pago");
+            MontoInfraccionPagado = GetMontoInfraccion();
         }
         public bool EstaPaga()
         {
@@ -75,7 +83,19 @@ namespace CapaNegocio
 
         public void Registrar()
         {
-            throw new InvalidOperationException();
+            DatosBD.Registrar(
+                "usuario",
+                new Dictionary<string, object> { 
+                    { "numInfraccion", NumeroInfraccion }, 
+                    { "fechaInfraccion", FechaInfraccion }, 
+                    { "fechaVencimiento", FechaVencimiento }, 
+                    { "fechaPago", FechaPago },
+                    { "tipoInfraccion", TipoInfraccion.Codigo },
+                    { "Vehiculo", Vehiculo.Dominio },
+                    { "importeBase", TipoInfraccion.Importe },
+                    { "montoInfraccion", MontoInfraccionPagado },
+                    }
+                );
         }
         public void Actualizar()
         {

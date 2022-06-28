@@ -14,21 +14,25 @@ namespace CapaVista
 {
     public partial class ModificarTipoInfraccion : Form
     {
+        TipoInfraccion TipoInfraccion;
         public ModificarTipoInfraccion(TipoInfraccion tipoInf)
         {
             InitializeComponent();
+            TipoInfraccion = tipoInf;
 
-            string grave = "Grave";
-            string leve = "Leve";
+            List<string> listaTipo = new List<string>() { "Grave", "Leve" };
+
+            comboBoxTipo.DataSource = null;
+            comboBoxTipo.DataSource = listaTipo;
+
+            if(tipoInf.Tipo == 'G')
+                comboBoxTipo.SelectedItem = listaTipo[0];
+            else if (tipoInf.Tipo == 'L')
+                comboBoxTipo.SelectedItem=  listaTipo[1];
 
             textBoxCodigo.Text = tipoInf.Codigo.ToString();
             textBoxDescripcion.Text = tipoInf.Descripcion;
             textBoxImporte.Text = tipoInf.Importe.ToString();
-
-            comboBoxTipo.DataSource = null;
-            comboBoxTipo.Items[0] = grave;
-            comboBoxTipo.Items[1] = leve;
-            comboBoxTipo.SelectedItem = tipoInf.Tipo;
         }
 
         private void buttonModificarTipoInfraccion_Click(object sender, EventArgs e)
@@ -42,11 +46,17 @@ namespace CapaVista
             if (!ValidarImporte(importeStr, out importe))
                 return;
 
-            char tipo = char.Parse(comboBoxTipo.SelectedItem.ToString());
-
             if (comboBoxTipo.SelectedItem != null)
-                ;//TipoInfraccion.Actualizar(descripcion, importe, tipo);
-            
+            {
+                string tipoStr = comboBoxTipo.SelectedItem.ToString();
+                char tipo = tipoStr[0];
+
+                TipoInfraccion.Descripcion = descripcion;
+                TipoInfraccion.Importe = importe;
+                TipoInfraccion.Tipo = tipo;
+                TipoInfraccion.Actualizar();
+            }
+
             this.Close();
         }
         //Validar//
