@@ -32,7 +32,7 @@ Inherits="UIWeb.Inicio" %>
         <div
           class="vh-100 d-flex flex-column overflow-hidden div-flex div-centered"
         >
-            <asp:Image ID="Image1" runat="server" />
+          <asp:Image ID="Image1" runat="server" />
           <asp:Label
             class="mb-1"
             ID="LabelBienvenida"
@@ -55,7 +55,7 @@ Inherits="UIWeb.Inicio" %>
               ID="ListBoxInfracciones"
               runat="server"
               Height="249px"
-              Width="195px"
+              Width="350px"
               style="overflow-x: auto"
             ></asp:ListBox>
 
