@@ -40,9 +40,17 @@ namespace CapaNegocio
         {
             Vehiculos = new List<Vehiculo>();
         }
+
         public override string ToString()
         {
             return Nombre + " - " + Dni;
+        }
+        public List<Infraccion> GetAllInfracciones()
+        {
+            List<Infraccion> list = new List<Infraccion>();
+            foreach (var vehiculo in Vehiculos)
+                list.AddRange(vehiculo.Infracciones);
+            return list;
         }
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//
         public override void Registrar()

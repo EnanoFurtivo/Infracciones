@@ -1,32 +1,84 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="UIWeb.Inicio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs"
+Inherits="UIWeb.Inicio" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Infracciones</title>
 
-    <head runat="server">
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="bootstrap/icons/bootstrap-icons.css" />
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Infracciones</title>
+    <style>
+      body {
+        background-color: rgb(25, 60, 85);
+      }
+      .div-flex {
+        display: flex;
+      }
+      .div-centered {
+        justify-content: center;
+      }
+    </style>
+  </head>
 
-        <!-- Bootstrap -->
-        <script src="bootstrap/js/bootstrap.js"></script>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-utilities.css"/>
-        <link rel="stylesheet" href="bootstrap/icons/bootstrap-icons.css"/>
+  <body class="vh-100 vw-100">
+    <div class="div-flex div-centered text-white">
+      <form id="form1" runat="server">
+        <div
+          class="vh-100 d-flex flex-column overflow-hidden div-flex div-centered"
+        >
+            <asp:Image ID="Image1" runat="server" />
+          <asp:Label
+            class="mb-1"
+            ID="LabelBienvenida"
+            runat="server"
+            Text="Label"
+            Font-Size="XX-Large"
+            Font-Bold="True"
+            Font-Italic="False"
+          ></asp:Label>
 
-    </head>
+          <asp:Label
+            ID="LabelLista"
+            runat="server"
+            Text="Sus infracciones"
+          ></asp:Label>
 
-    <body class="vh-100 vw-100">
-            <form class="flex flex-column text-center align-middle" id="form1" runat="server">
+          <div class="div-flex flex-row div-centered">
+            <asp:ListBox
+              class="form-select"
+              ID="ListBoxInfracciones"
+              runat="server"
+              Height="249px"
+              Width="195px"
+              style="overflow-x: auto"
+            ></asp:ListBox>
 
-                <asp:Label ID="LabelBienvenida" runat="server" Text="Label" Font-Size="X-Large"></asp:Label>
-                <asp:Label ID="LabelLista" runat="server" Text="Sus infracciones"></asp:Label>
-                <asp:ListBox class="form-select" ID="ListBoxInfracciones" runat="server" Height="249px" Width="195px" style="overflow-x:auto;"></asp:ListBox>
-                <asp:Button class="btn btn-success" ID="ButtonPdf" runat="server" Text="Generar orden de pago" OnClick="ButtonInscribirse_Click" />
-                <asp:Button class="btn btn-danger" ID="ButtonCerrarSesion" runat="server" OnClick="ButCerrarSesion_Click" Text="Cerrar Sesión" />
+            <div class="div-flex flex-column">
+              <asp:Button
+                class="btn btn-success mb-3 ms-3"
+                ID="ButtonPdf"
+                runat="server"
+                Text="Generar orden de pago"
+                OnClick="ButtonGenerarPdf_Click"
+              />
 
-            </form>
-        
-    </body>
-
+              <asp:Button
+                class="btn btn-danger ms-3"
+                ID="ButtonCerrarSesion"
+                runat="server"
+                OnClick="ButtonCerrarSesion_Click"
+                Text="Cerrar Sesión"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

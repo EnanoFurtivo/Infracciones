@@ -5,30 +5,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaDatos;
 using CapaNegocio;
 
 namespace UIWeb
 {
     public partial class InicioSesion: System.Web.UI.Page
     {
-        /*UsuarioController Usuarios;
-        ActividadController Actividades;
-        static string LugarBase;*/
+        static string LugarBase;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("Inicio.aspx");
-
             if (!IsPostBack)
             {
-                /*recuperar();
-
                 if(LugarBase == null)
                 {
                     string pathAux = Server.MapPath("/InicioSesion.aspx");
                     string[] path = pathAux.Split('\\');
                     path[path.Length - 1] = "bin";
-                    path[path.Length - 2] = "ClubDeportivo";
+                    path[path.Length - 2] = "CapaVista";
 
                     string pathFinal = "";
                     foreach (string s in path)
@@ -38,58 +33,46 @@ namespace UIWeb
 
                     LugarBase = pathFinal;
 
-                    UsuarioController.PonerPathABaseAccess(LugarBase);
+                    //Conexion a base de datos//
+                    DatosBD.PonerPathBaseAccess(LugarBase);
 
-                    Usuarios = new UsuarioController();
-
-                    Actividades = new ActividadController(Usuarios);
-                    Usuarios.RecuperarRegistroActividades(Actividades);
-
-                    Session["ucontrol"] = Usuarios;
-                    Session["acontrol"] = Actividades;
-                }*/
+                    //Recupera las listas al comenzar la ejecucion//
+                    TipoInfraccion.RecuperarTiposInfraccion();
+                    Usuario.RecuperarUsuarios();
+                    Infraccion.RecuperarUltimaInfraccion();
+                }
             }
-        }
-        public void recuperar()
-        {
-            /*Usuarios = (UsuarioController)Session["ucontrol"];
-            Actividades = (ActividadController)Session["acontrol"];*/
         }
         private bool ValidarDni(string dniStr, out int dni)
         {
-            dni = 0;
-            return false;
-            /*if (dniStr == "")
+            if (dniStr == "")
             {
-                LabelDeError.Text = "    Se esperaba un dni";
+                LabelDeError.Text = "Se esperaba un dni";
                 dni = -1;
                 return false;
             }
 
             if (!int.TryParse(dniStr, out dni))
             {
-                LabelDeError.Text = "    El dni debe ser numerico";
+                LabelDeError.Text = "El dni debe ser numerico";
                 dni = -1;
                 return false;
             }
 
-            return true;*/
+            return true;
         }
         private bool ValidarClave(string clave)
         {
-            return false;
-            /*if (clave == "")
+            if (clave == "")
             {
-                LabelDeError.Text = "    Se esperaba una clave";
+                LabelDeError.Text = "Se esperaba una clave";
                 return false;
             }
 
-            return true;*/
+            return true;
         }
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
-            /*recuperar();
-
             string dniStr = this.TxtBoxDni.Text;
             int dni;
             if (!ValidarDni(dniStr, out dni))
@@ -99,19 +82,19 @@ namespace UIWeb
             if (!ValidarClave(clave))
                 return;
 
-            if (Usuarios.ValidarCredenciales(dni, clave) == true)
+            if (Usuario.ValidarCredenciales(dni, clave, typeof(Duenio)) == true)
             {
-                Session["socio"] = Usuarios.GetUsuario(dni);
+                Session["usuario"] = (Duenio)Usuario.GetUsuario(dni);
                 TxtBoxDni.Text = string.Empty;
                 TxtBoxClave.Text = string.Empty;
                 Response.Redirect("Inicio.aspx");
             }
             else
             {
-                this.LabelDeError.Text = "    El dni o clave ingresada es incorrecta";
+                this.LabelDeError.Text = "El dni o clave ingresada es incorrecta";
                 TxtBoxDni.Text = string.Empty;
                 TxtBoxClave.Text = string.Empty;
-            }*/
+            }
         }
     }
 }
