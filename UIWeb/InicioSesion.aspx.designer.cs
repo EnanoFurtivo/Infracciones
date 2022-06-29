@@ -33,6 +33,15 @@ namespace UIWeb
         protected global::System.Web.UI.WebControls.Label LabelInicioSesion;
 
         /// <summary>
+        /// ButIngresar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButIngresar;
+
+        /// <summary>
         /// TxtBoxDni control.
         /// </summary>
         /// <remarks>
@@ -49,15 +58,6 @@ namespace UIWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtBoxClave;
-
-        /// <summary>
-        /// ButIngresar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButIngresar;
 
         /// <summary>
         /// LabelDeError control.
