@@ -64,7 +64,7 @@ Inherits="UIWeb.Inicio" %>
                 ID="ButtonPdf"
                 runat="server"
                 Text="Generar orden de pago"
-                OnClick="ButtonGenerarPdf_Click"
+                OnClick="ButtonPdf_Click"
               />
 
               <asp:Button

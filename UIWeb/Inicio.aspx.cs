@@ -32,11 +32,6 @@ namespace UIWeb
                 listBox.Items.Add(infracciones[i].ToString());
         }
 
-        protected void ButtonGenerarPdf_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         protected void ButtonCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("InicioSesion.aspx");
@@ -46,9 +41,13 @@ namespace UIWeb
         {
             if (Infracciones[ListBoxInfracciones.SelectedIndex].EstaPaga())
                 ButtonPdf.Enabled = false;
-            else 
+            else
                 ButtonPdf.Enabled = true;
         }
 
+        protected void ButtonPdf_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
