@@ -17,8 +17,8 @@ namespace UIWeb
             if (!IsPostBack)
             {
                 Duenio usr = (Duenio)Session["usuario"];
-                //refrescarLista(usr.GetAllInfracciones(), ListBoxInfracciones);
-                //this.LabelBienvenida.Text = "Bienvenido/a de nuevo " + usr.Nombre;
+                refrescarLista(usr.GetAllInfracciones(), ListBoxInfracciones);
+                this.LabelBienvenida.Text = "Bienvenido/a de nuevo " + usr.Nombre;
             }
         }
         public void refrescarLista(List<Infraccion> infracciones, ListBox listBox)
