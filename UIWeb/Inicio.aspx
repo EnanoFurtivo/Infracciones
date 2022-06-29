@@ -55,7 +55,7 @@ Inherits="UIWeb.Inicio" %>
               ID="ListBoxInfracciones"
               runat="server"
               Height="250px"
-              style="overflow-x: auto"
+              style="overflow-x: auto" OnSelectedIndexChanged="ListBoxInfracciones_SelectedIndexChanged"
             ></asp:ListBox>
 
             <div class="div-flex flex-column">
