@@ -45,11 +45,18 @@ namespace CapaNegocio
         {
             return Nombre + " - " + Dni;
         }
-        public List<Infraccion> GetAllInfracciones()
+        public List<Infraccion> GetAllInfraccionesPendientes()
         {
             List<Infraccion> list = new List<Infraccion>();
             foreach (var vehiculo in Vehiculos)
-                list.AddRange(vehiculo.Infracciones);
+                list.AddRange(vehiculo.GetInfraccionesPendientes());
+            return list;
+        }
+        public List<Infraccion> GetAllInfraccionesPagas()
+        {
+            List<Infraccion> list = new List<Infraccion>();
+            foreach (var vehiculo in Vehiculos)
+                list.AddRange(vehiculo.GetInfraccionesPagas());
             return list;
         }
         //Registrar, actualizar y/o eliminar el objeto de la persistencia//

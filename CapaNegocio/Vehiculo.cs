@@ -81,6 +81,16 @@ namespace CapaNegocio
 
             return lista;
         }
+        public List<Infraccion> GetInfraccionesPagas()
+        {
+            List<Infraccion> lista = new List<Infraccion>();
+
+            for (int i = 0; i < Infracciones.Count; i++)
+                if (Infracciones[i].EstaPaga())
+                    lista.Add(Infracciones[i]);
+
+            return lista;
+        }
         public void RegistrarInfraccion(TipoInfraccion tipoInfraccion, DateTime fechaInfraccion)
         {
             if (tipoInfraccion == null)

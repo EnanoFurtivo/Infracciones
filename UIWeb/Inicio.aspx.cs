@@ -12,14 +12,16 @@ namespace UIWeb
 {
     public partial class Inicio : System.Web.UI.Page
     {
-        protected List<Infraccion> Infracciones;
+        static protected List<Infraccion> Infracciones;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 Duenio usr = (Duenio)Session["usuario"];
-                refrescarLista(usr.GetAllInfracciones(), ListBoxInfracciones);
+                Infracciones = usr.GetAllInfraccionesPendientes();
+                refrescarLista(Infracciones, ListBoxInfracciones);
+                refrescarLista(usr.GetAllInfraccionesPagas(), ListBoxInfraccionesPagas);
                 this.LabelBienvenida.Text = "Bienvenido/a de nuevo " + usr.Nombre;
             }
         }
@@ -37,17 +39,9 @@ namespace UIWeb
             Response.Redirect("InicioSesion.aspx");
         }
 
-        protected void ListBoxInfracciones_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Infracciones[ListBoxInfracciones.SelectedIndex].EstaPaga())
-                ButtonPdf.Enabled = false;
-            else
-                ButtonPdf.Enabled = true;
-        }
-
         protected void ButtonPdf_Click(object sender, EventArgs e)
         {
-
+            ;
         }
     }
 }
