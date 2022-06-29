@@ -34,6 +34,7 @@
             this.buttonFormInfracciones = new System.Windows.Forms.Button();
             this.buttonFormRegistrarPago = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRegistrarVehiculo = new System.Windows.Forms.Button();
             this.buttonRegistrarUsuario = new System.Windows.Forms.Button();
             this.buttonCerrarSesion = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelSubMenuInfracciones = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSubMenuInfracciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,10 +116,21 @@
             this.panel1.Controls.Add(this.buttonFormRegistrarPago);
             this.panel1.Controls.Add(this.buttonFormInfracciones);
             this.panel1.Controls.Add(this.buttonFormInfraccion);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 560);
             this.panel1.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaVista.Properties.Resources.logoinfracciones;
+            this.pictureBox1.Location = new System.Drawing.Point(3, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonRegistrarVehiculo
             // 
@@ -227,10 +240,13 @@
             this.Controls.Add(this.labelBienvenida);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Inicio";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSubMenuInfracciones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,5 +268,6 @@
         private System.Windows.Forms.Button buttonRegistrarVehiculo;
         private System.Windows.Forms.Button buttonRegistrarUsuario;
         private System.Windows.Forms.Panel panelSubMenuInfracciones;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

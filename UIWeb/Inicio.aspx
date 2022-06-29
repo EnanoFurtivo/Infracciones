@@ -54,8 +54,7 @@ Inherits="UIWeb.Inicio" %>
               class="form-select"
               ID="ListBoxInfracciones"
               runat="server"
-              Height="249px"
-              Width="350px"
+              Height="250px"
               style="overflow-x: auto"
             ></asp:ListBox>
 
