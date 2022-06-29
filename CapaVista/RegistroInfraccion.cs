@@ -17,13 +17,11 @@ namespace CapaVista
         {
             InitializeComponent();
 
-            comboBoxTipoInfraccion.Items.Clear();
-            for(int i = 0; i < TipoInfraccion.TiposInfraccion.Count; i++)
-                comboBoxTipoInfraccion.Items.Add(TipoInfraccion.TiposInfraccion[i].ToString());
+            comboBoxTipoInfraccion.DataSource = null;
+            comboBoxTipoInfraccion.DataSource = TipoInfraccion.TiposInfraccion;
 
-            comboBoxVehiculo.Items.Clear();
-            for(int i = 0; i < Vehiculo.GetVehiculos().Count; i++)
-                comboBoxVehiculo.Items.Add(Vehiculo.GetVehiculos().ToString());
+            comboBoxVehiculo.DataSource = null;
+            comboBoxVehiculo.DataSource = Vehiculo.GetVehiculos();
         }
 
         private void buttonRegistrarInfraccion_Click(object sender, EventArgs e)
@@ -33,7 +31,10 @@ namespace CapaVista
             DateTime dateTime = dateTimePickerFechaInfraccion.Value;
 
             if(dateTime != null && tipoInfraccion != null && vehiculo != null)
+            {
                 vehiculo.RegistrarInfraccion(tipoInfraccion, dateTime);
+                MessageBox.Show("Infraccion registrada con exito", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

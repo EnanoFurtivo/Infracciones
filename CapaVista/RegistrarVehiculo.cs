@@ -17,8 +17,8 @@ namespace CapaVista
         {
             InitializeComponent();
 
-            for (int i = 0; i < Usuario.GetUsuarios(typeof(Duenio)).Count; i++)
-                comboBoxDuenios.Items.Add(Usuario.GetUsuarios(typeof(Duenio))[i]);
+            comboBoxDuenios.DataSource = null;
+            comboBoxDuenios.DataSource = Usuario.GetUsuarios(typeof(Duenio));
         }
 
         private void buttonRegistrarVehiculo_Click(object sender, EventArgs e)
@@ -31,12 +31,11 @@ namespace CapaVista
             if (!ValidarMarca(marca))
                 return;
 
-            Duenio duenio = (Duenio)comboBoxDuenios.SelectedItem;
-
-            if (duenio != null)
+            if (comboBoxDuenios.SelectedItem != null)
             {
-                Vehiculo vehiculo = new Vehiculo(dominio, duenio, marca);
-                duenio.Vehiculos.Add(vehiculo);
+                Vehiculo vehiculo = new Vehiculo(dominio, (Duenio)comboBoxDuenios.SelectedItem, marca);
+                vehiculo.Registrar();
+                MessageBox.Show("Vehiculo registrado con exito", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         //Validar//

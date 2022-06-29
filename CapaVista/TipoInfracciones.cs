@@ -17,12 +17,14 @@ namespace CapaVista
         {
             InitializeComponent();
             MostrarLista();
+            listBoxTipoInfraccion.ClearSelected();
         }
 
         private void MostrarLista()
         {
             listBoxTipoInfraccion.DataSource = null;
             listBoxTipoInfraccion.DataSource = TipoInfraccion.TiposInfraccion;
+            listBoxTipoInfraccion.ClearSelected();
         }
 
         private void buttonAgregarTipoInfraccion_Click(object sender, EventArgs e)
@@ -36,7 +38,6 @@ namespace CapaVista
         {
             ModificarTipoInfraccion form = new ModificarTipoInfraccion((TipoInfraccion)listBoxTipoInfraccion.SelectedItem);
             form.ShowDialog();
-            listBoxTipoInfraccion.ClearSelected();
             MostrarLista();
         }
     }

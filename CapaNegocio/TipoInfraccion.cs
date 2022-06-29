@@ -31,7 +31,7 @@ namespace CapaNegocio
             }
 
             TiposInfraccion = tiposInfraccion;
-            UltimoTipoInfraccion = tiposInfraccion.Count;
+            UltimoTipoInfraccion = DatosBD.GetUltimoId("tipoInfraccion", "codigo");
         }
         public static TipoInfraccion GetTipoInfraccion(int codigo)
         {

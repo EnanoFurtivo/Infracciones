@@ -17,26 +17,30 @@ namespace CapaVista
         {
             InitializeComponent();
             MostrarLista();
+            listBoxInfraccion.ClearSelected();
         }
         private void MostrarLista()
         {
             //Carga las lista de las infracciones pendientes
             List<Vehiculo> vehiculos = Vehiculo.GetVehiculos();
             List<Infraccion> infracciones = new List<Infraccion>();
+            List<Infraccion> infraccionesAux = new List<Infraccion>();
 
             for (int i = 0; i < vehiculos.Count; i++)
             {
-                infracciones = vehiculos[i].GetInfraccionesPendientes();
-
-                for (int j = 0; j < infracciones.Count; j++)
-                    listBoxInfraccion.Items.Add(infracciones[j]);
+                infraccionesAux = vehiculos[i].GetInfraccionesPendientes();
+                    for (int j = 0; j < infraccionesAux.Count; j++)
+                        infracciones.Add(infraccionesAux[j]);
             }
+
+            listBoxInfraccion.DataSource = null;
+            listBoxInfraccion.DataSource = infracciones;
         }
-        private void listBoxInfraccion_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonEliminarInfraccion_Click(object sender, EventArgs e)
         {
             Infraccion infraccion = (Infraccion)listBoxInfraccion.SelectedItem;
 
-            if(listBoxInfraccion.SelectedItem != null)
+            if (listBoxInfraccion.SelectedItem != null)
             {
                 Vehiculo vehiculo = infraccion.Vehiculo;
                 vehiculo.EliminarInfraccion(infraccion);
