@@ -146,10 +146,11 @@ namespace UIWeb
 
                 gfx.DrawImage(qr, margenInicioX, margenInicioY, 250, 250);
 
-                // Save the document...
+                //Guardar Documento PDF en Servidor
                 string filename = (string)Session["path_pdf"] + "Infraccion_" + infraccion.NumeroInfraccion + "_" +infraccion.Vehiculo.Dominio + ".pdf";
                 document.Save(filename);
-                Process.Start(filename);
+                Response.Redirect("/exports/Infraccion_" + infraccion.NumeroInfraccion + "_" +infraccion.Vehiculo.Dominio + ".pdf");
+
             }
         }
     }
