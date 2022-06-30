@@ -44,20 +44,23 @@ namespace UIWeb
 
         protected void ButtonPdf_Click(object sender, EventArgs e)
         {
-            PdfDocument document = new PdfDocument();
-            PdfPage page = document.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-            XFont font = new XFont("Arial", 20, XFontStyle.Bold);
+            if (ListBoxInfracciones.SelectedIndex != -1)
+            {
+                PdfDocument document = new PdfDocument();
+                PdfPage page = document.AddPage();
+                XGraphics gfx = XGraphics.FromPdfPage(page);
+                XFont font = new XFont("Arial", 20, XFontStyle.Bold);
 
-            // Draw the text
-            gfx.DrawString("Hello, World!", font, XBrushes.Black,
-              new XRect(0, 0, page.Width, page.Height),
-              XStringFormats.Center);
+                // Draw the text
+                gfx.DrawString("Hello, World!", font, XBrushes.Black,
+                  new XRect(0, 0, page.Width, page.Height),
+                  XStringFormats.Center);
 
-            // Save the document...
-            string filename = (string)Session["path_pdf"] + "HelloWorld.pdf";
-            document.Save(filename);
-            Process.Start(filename);
+                // Save the document...
+                string filename = (string)Session["path_pdf"] + "HelloWorld.pdf";
+                document.Save(filename);
+                Process.Start(filename);
+            }
         }
     }
 }
