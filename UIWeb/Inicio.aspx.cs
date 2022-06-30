@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -10,6 +12,7 @@ using CapaDatos;
 using CapaNegocio;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using QRCoder;
 
 namespace UIWeb
 {
@@ -46,6 +49,25 @@ namespace UIWeb
             if (ListBoxInfracciones.SelectedIndex != -1)
             {
                 Infraccion infraccion = Infracciones[ListBoxInfracciones.SelectedIndex];
+
+                string datosQrStr = "ORDEN DE PAGO\n" +
+                    "Dominio del vehiculo: " + infraccion.Vehiculo.Dominio + "\n" +
+                    "Numero de infraccion: #" + infraccion.NumeroInfraccion + "\n" +
+                    "Fecha de infraccion: " + infraccion.FechaInfraccion.ToString("dd/MM/yyyy") + "\n" +
+                    "Fecha de vencimiento de infraccion: " + infraccion.FechaVencimiento.ToString("dd/MM/yyyy") + "\n" +
+                    "Importe base: $" + infraccion.ImporteBase + "\n" +
+                    "Descuento: $" + infraccion.GetDescuentoActual() + "\n" +
+                    "Importe a pagar: $" + infraccion.MontoInfraccion + "\n" +
+                    "Fecha de vencimiento orden de pago: " + DateTime.Now.ToString("dd/MM/yyyy");
+
+                QRCodeData qRCodeData = new QRCodeData(Encoding.ASCII.GetBytes(datosQrStr),QRCodeData.Compression.Uncompressed);
+                QRCode code = new QRCode(qRCodeData);
+                
+                Bitmap qrbmp = code.GetGraphic(100);
+                Stream stream = new MemoryStream();
+                qrbmp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                XImage qr = XImage.FromStream(stream);
+
                 PdfDocument document = new PdfDocument();
                 document.Info.Title = "Orden Pago Infraccion";
                 document.Info.Author = "Sistema de Infracciones";
@@ -120,6 +142,8 @@ namespace UIWeb
                   new XRect(margenInicioX, margenInicioY, margenFinX, margenFinY),
                   XStringFormats.TopLeft);
                 margenInicioY += interlineado + 40;
+
+                gfx.DrawImage(qr, margenInicioX - 20, margenInicioY - 20, 100, 100);
 
                 // Save the document...
                 string filename = (string)Session["path_pdf"] + "Infraccion_" + infraccion.NumeroInfraccion + "_" +infraccion.Vehiculo.Dominio + ".pdf";
