@@ -36,7 +36,6 @@ Inherits="UIWeb.InicioSesion" %>
           <asp:Label
             ID="LabelInicioSesion"
             runat="server"
-            style="font-weight: 700"
             Text="INICIO SESIÓN"
           ></asp:Label>
 
@@ -45,22 +44,16 @@ Inherits="UIWeb.InicioSesion" %>
             runat="server"
             Text="Ingresar"
             OnClick="ButtonIngresar_Click"
-            style="margin-left: 54px; font-weight: 700"
-            Width="126px"
-            CssClass="auto-style8"
           />
 
           <asp:TextBox
             ID="TxtBoxDni"
             runat="server"
-            style="margin-left: 32px"
-            CssClass="auto-style8"
           ></asp:TextBox>
 
           <asp:TextBox
             ID="TxtBoxClave"
             runat="server"
-            style="margin-left: 18px; margin-top: 45px"
             TextMode="Password"
           ></asp:TextBox>
 
