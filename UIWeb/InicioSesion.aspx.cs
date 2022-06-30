@@ -29,6 +29,15 @@ namespace UIWeb
                         pathFinalPdfs += s + "\\";
                     Session["path_pdf"] = pathFinalPdfs;
 
+                    //path logo//
+                    string pathAuxLogo = Server.MapPath("/InicioSesion.aspx");
+                    string[] pathLogo = pathAuxPdfs.Split('\\');
+                    pathLogo[pathLogo.Length - 1] = "";
+                    string pathFinalLogo = "";
+                    for(int i = 0; i < pathLogo.Length-1; i++)
+                        pathFinalLogo += pathLogo[i] + "\\";
+                    Session["path_logo"] = pathFinalLogo + "logoinfracciones.png";
+
                     //path access//
                     string pathAux = Server.MapPath("/InicioSesion.aspx");
                     string[] path = pathAux.Split('\\');
