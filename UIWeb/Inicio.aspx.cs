@@ -142,9 +142,9 @@ namespace UIWeb
                 gfx.DrawString("Fecha de vencimiento orden de pago: " + DateTime.Now.ToString("dd/MM/yyyy"), font, XBrushes.Black,
                   new XRect(margenInicioX, margenInicioY, margenFinX, margenFinY),
                   XStringFormats.TopLeft);
-                margenInicioY += interlineado + 40;
+                margenInicioY += interlineado + 50;
 
-                gfx.DrawImage(qr, margenInicioX - 20, margenInicioY - 20, 100, 100);
+                gfx.DrawImage(qr, margenInicioX, margenInicioY, 250, 250);
 
                 // Save the document...
                 string filename = (string)Session["path_pdf"] + "Infraccion_" + infraccion.NumeroInfraccion + "_" +infraccion.Vehiculo.Dominio + ".pdf";
