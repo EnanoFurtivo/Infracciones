@@ -116,5 +116,10 @@ namespace CapaNegocio
             "infraccion",
             new Dictionary<string, object> {{ "numInfraccion", NumeroInfraccion }});
         }
+
+        public double GetDescuentoActual()
+        {
+            return ImporteBase - MontoInfraccion;
+        }
     }
 }
