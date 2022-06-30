@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
 using CapaNegocio;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 
 namespace UIWeb
 {
@@ -41,7 +44,20 @@ namespace UIWeb
 
         protected void ButtonPdf_Click(object sender, EventArgs e)
         {
-            ;
+            PdfDocument document = new PdfDocument();
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("Arial", 20, XFontStyle.Bold);
+
+            // Draw the text
+            gfx.DrawString("Hello, World!", font, XBrushes.Black,
+              new XRect(0, 0, page.Width, page.Height),
+              XStringFormats.Center);
+
+            // Save the document...
+            string filename = "HelloWorld.pdf";
+            document.Save(filename);
+            Process.Start(filename);
         }
     }
 }
