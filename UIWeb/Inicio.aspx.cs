@@ -59,9 +59,10 @@ namespace UIWeb
                     "Descuento: $" + infraccion.GetDescuentoActual() + "\n" +
                     "Importe a pagar: $" + infraccion.MontoInfraccion + "\n" +
                     "Fecha de vencimiento orden de pago: " + DateTime.Now.ToString("dd/MM/yyyy");
-
-                QRCodeData qRCodeData = new QRCodeData(Encoding.ASCII.GetBytes(datosQrStr),QRCodeData.Compression.Uncompressed);
-                QRCode code = new QRCode(qRCodeData);
+                
+                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(datosQrStr, QRCodeGenerator.ECCLevel.Q);
+                QRCode code = new QRCode(qrCodeData);
                 
                 Bitmap qrbmp = code.GetGraphic(100);
                 Stream stream = new MemoryStream();
