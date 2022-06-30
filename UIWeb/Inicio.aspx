@@ -42,12 +42,21 @@ Inherits="UIWeb.Inicio" %>
             Font-Bold="True"
             Font-Italic="False"
           ></asp:Label>
-
+         
+         <div class="div-flex flex-row">
           <asp:Label
             ID="LabelLista"
             runat="server"
-            Text="Sus infracciones"
+            Text="Sus infracciones Pagas:"
+            style="margin-right:355px;"
           ></asp:Label>
+
+          <asp:Label
+            ID="Label2"
+            runat="server"
+            Text="Sus infracciones Pendientes:"
+          ></asp:Label>
+          </div>
 
           <div class="div-flex flex-row div-centered">
             <asp:ListBox
@@ -59,7 +68,7 @@ Inherits="UIWeb.Inicio" %>
             ></asp:ListBox>
 
             <asp:ListBox
-              class="form-select"
+              class="form-select ms-3"
               ID="ListBoxInfracciones"
               runat="server"
               Height="250px"
