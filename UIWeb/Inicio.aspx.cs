@@ -55,7 +55,7 @@ namespace UIWeb
               XStringFormats.Center);
 
             // Save the document...
-            string filename = "HelloWorld.pdf";
+            string filename = (string)Session["path_pdf"] + "HelloWorld.pdf";
             document.Save(filename);
             Process.Start(filename);
         }

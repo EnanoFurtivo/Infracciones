@@ -20,17 +20,24 @@ namespace UIWeb
             {
                 if(LugarBase == null)
                 {
+                    //path pdfs//
+                    string pathAuxPdfs = Server.MapPath("/InicioSesion.aspx");
+                    string[] pathPdfs = pathAuxPdfs.Split('\\');
+                    pathPdfs[pathPdfs.Length - 1] = "exports";
+                    string pathFinalPdfs = "";
+                    foreach (string s in pathPdfs)
+                        pathFinalPdfs += s + "\\";
+                    Session["path_pdf"] = pathFinalPdfs;
+
+                    //path access//
                     string pathAux = Server.MapPath("/InicioSesion.aspx");
                     string[] path = pathAux.Split('\\');
                     path[path.Length - 1] = "bin";
                     path[path.Length - 2] = "CapaVista";
-
                     string pathFinal = "";
                     foreach (string s in path)
                         pathFinal += s + "\\";
-
                     pathFinal += "Debug" + "\\";
-
                     LugarBase = pathFinal;
 
                     //Conexion a base de datos//
