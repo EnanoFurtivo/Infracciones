@@ -35,29 +35,38 @@ Inherits="UIWeb.InicioSesion" %>
         >
           <asp:Label
             ID="LabelInicioSesion"
+            Font-Size="XX-Large"
+            Font-Bold="True"
+            Font-Italic="False"
             runat="server"
             Text="INICIO SESIÓN"
           ></asp:Label>
 
-          <asp:Button
-            ID="ButIngresar"
-            runat="server"
-            Text="Ingresar"
-            OnClick="ButtonIngresar_Click"
-          />
 
           <asp:TextBox
             ID="TxtBoxDni"
+            class="form-control mb-3 mt-3"
+            type="text"
             runat="server"
           ></asp:TextBox>
 
           <asp:TextBox
             ID="TxtBoxClave"
+            class="form-control mb-3"
+            type="password"
             runat="server"
             TextMode="Password"
           ></asp:TextBox>
 
-          <asp:Label ID="LabelDeError" runat="server"></asp:Label>
+          <asp:Button
+            ID="ButIngresar"
+            class="btn btn-success mb-3"
+            runat="server"
+            Text="Ingresar"
+            OnClick="ButtonIngresar_Click"
+          />
+
+          <asp:Label ID="LabelDeError" class="text-red" runat="server"></asp:Label>
         </div>
       </form>
     </div>

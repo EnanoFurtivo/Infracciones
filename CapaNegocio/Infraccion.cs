@@ -82,7 +82,7 @@ namespace CapaNegocio
         }
         public override string ToString()
         {
-            return FechaInfraccion.ToString(("dd/MM/yyyy")) + " - " + TipoInfraccion.Descripcion + " - " + Vehiculo.Dominio + " - " + "S" + ImporteBase;
+            return FechaInfraccion.ToString(("dd/MM/yyyy")) + " - " + TipoInfraccion.Descripcion + " - " + Vehiculo.Dominio + " - " + "$" + ImporteBase;
         }
         public void Registrar()
         {
