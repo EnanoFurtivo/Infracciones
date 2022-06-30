@@ -46,7 +46,7 @@ namespace UIWeb
                     string pathFinal = "";
                     foreach (string s in path)
                         pathFinal += s + "\\";
-                    pathFinal += "Debug" + "\\";
+                    pathFinal += "Release" + "\\";
                     LugarBase = pathFinal;
 
                     //Conexion a base de datos//
