@@ -123,7 +123,6 @@ namespace CapaNegocio
                 "tipoInfraccion",
                 new Dictionary<string, object>
                 {
-                    { "codigo", Codigo },
                     { "descripcion", Descripcion },
                     { "importe", Importe },
                     { "tipo", Tipo } 
